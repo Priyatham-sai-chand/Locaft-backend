@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 import 'C:\\Priyathamwork\\locaft\\locaft\\src\\style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class  HomePage extends Component {
   render(){
@@ -45,12 +47,12 @@ class  HomePage extends Component {
 
         <div className="col-lg-6">
           <h1 class="big-heading">Adapt to a new place easy peasy.</h1>
-          <button type="button" class="btn btn-info login">Log In</button>
+          <button type="button" class = "btn btn-info login mr-1">Log In</button>
           <button type="button" class="btn btn-info loginb">Sign Up</button>
 
         </div>
         <div class="col-lg-6">
-          <img class="title-image" src={"C:\\Priyathamwork\\locaft\\locaft\\public\\locaft.png"} alt="locaft-mockup" />
+          <img class="title-image" src="/locaft.png" alt="locaft-mockup" />
         </div>
         
       </div>
@@ -62,7 +64,7 @@ class  HomePage extends Component {
 
       <div class="row">
         <div class="feature-box col-lg-4">
-          <i className="icon fas fa-check-circle fa-4x"></i>
+          <i class="icon fas fa-check-circle fa-4x"></i>
           <h3 class="feature-title">Easy to use.</h3>
           <p>Get relocated.We'll take care of everything.</p>
         </div>
@@ -108,10 +110,10 @@ class  HomePage extends Component {
 
   </section>
   <section class="colored-section" id="press">
-    <img class="press-logo" src="Images/download.png" alt="indigo-logo" />
-    <img class="press-logo" src="Images/avasa.jpg" alt="avasa-logo" />
-    <img class="press-logo" src="Images/download.jpg" alt="vrl-logo" />
-    <img class="press-logo" src="Images/nobroker.png" alt="nobroker-logo" />
+    <img class="press-logo" src="/indigo.png" alt="indigo-logo" />
+    <img class="press-logo" src="/avasa.jpg" alt="avasa-logo" />
+    <img class="press-logo" src="/vrl.jpg" alt="vrl-logo" />
+    <img class="press-logo" src="/nobroker.png" alt="nobroker-logo" />
 
   </section>
   <section class="white-section" id="about-us">

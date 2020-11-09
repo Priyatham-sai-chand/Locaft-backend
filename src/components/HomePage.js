@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
-import 'C:\\Priyathamwork\\locaft\\locaft\\src\\style.css';
+import '../homepage.css';
+import LogInContainer from './LogInContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class  HomePage extends Component {
+  state = { render: false }
+  add = () => {
+    this.setState({render : !this.state.render})
+  }
   render(){
     return (
       <div className="HomePage">
@@ -34,7 +38,7 @@ class  HomePage extends Component {
               <a class="nav-link" href="#cta">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#login">Sign up or in</a>
+              <a class="nav-link" href="#login">Sign up or Sign in</a>
             </li>
           </ul>
 
@@ -44,13 +48,15 @@ class  HomePage extends Component {
 
 
       <div className="row">
-
+        
         <div className="col-lg-6">
           <h1 class="big-heading">Adapt to a new place easy peasy.</h1>
           <button type="button" class = "btn btn-info login mr-1">Log In</button>
-          <button type="button" class="btn btn-info loginb">Sign Up</button>
+          
+          <button type="button" class="btn btn-info loginb" >Sign Up</button>
 
         </div>
+        
         <div class="col-lg-6">
           <img class="title-image" src="/locaft.png" alt="locaft-mockup" />
         </div>

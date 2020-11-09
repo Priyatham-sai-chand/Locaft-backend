@@ -12,7 +12,7 @@ router.post(
         check('email','E-mail is required').isEmail(),
         check('password','Password is required').notEmpty()
     ],
-    async (req,res) =>{
+     async (req,res) =>{
         try{
 
             let { username,email,phonenumber,password } = req.body;
@@ -59,6 +59,62 @@ router.post(
             return res.status(500).json({ msg: "Server Error..."});
         }
     
+    }
+)
+router.post(
+    '/login',
+    [
+        check('email',"Type valid e-mail").isEmail(),
+        check('password','Passoword is required').notEmpty()
+    ],
+   async (req,res) => {
+        try{
+
+            const { email, password } = req.body;
+
+            let user = await UserSchema.findOne({ email });
+            const errors = validationResult(req);
+
+            if(!errors.isEmpty()){
+                return res.status(401).json({
+                    errors: errors.array()
+                });
+            }
+
+            if(!user) {
+                return res.status(401).json({ msg: "This user doesn't exists"});
+            }
+
+            let isPassowardMatch = await bcrypt.compare(password,user.password);
+
+            if(isPassowardMatch){
+                const payload = {
+                    user: {
+                        id: user.id,
+                        
+                    }
+                }
+                jwt.sign(
+                    payload,
+                    config.get('jwtSecret'),
+                    (err,token) =>{
+                        if(err) throw err;
+                        res.json({ token });
+                    }
+                )
+
+
+            }else return res.status(401).json({
+                msg:"incorrect Passoword"
+            });
+
+        } catch (error) {
+            console.log(error.message);
+            return res.status(500).json({
+                msg:"serve error ...."
+            });
+        }
+
     }
 )
 module.exports = router;

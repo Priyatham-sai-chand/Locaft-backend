@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+##Locaft
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's a packing and movers and a conceriage service website.
+
+
 
 ## Available Scripts
 

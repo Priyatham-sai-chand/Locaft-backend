@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Login from "./components/SignIn";
 import LogInContainer from "./components/LogInContainer";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 class  App extends Component {
   render(){
     return (
       <div className="App">
-        < LogInContainer />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" Component={HomePage} />
+            <Route path="/User" Component={LogInContainer} />
+          </Switch>
+        </BrowserRouter>
 
         
       </div>

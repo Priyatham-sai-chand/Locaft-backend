@@ -5,12 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class  HomePage extends Component {
-  state = { render: false }
-  add = () => {
-    this.setState({render : !this.state.render})
-  }
+  
   render(){
     return (
+      
       <div className="HomePage">
   <section class="colored-section" id="title">
 

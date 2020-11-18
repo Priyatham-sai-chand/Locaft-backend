@@ -8,11 +8,10 @@ class  App extends Component {
   render(){
     return (
       <div className="App">
-        <PricingPlan />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" Component={HomePage} />
-            <Route path="/User" Component={LogInContainer} />
+            <Route exact path="/home" component={HomePage} />
+            <Route path="/user" component={LogInContainer} />
           </Switch>
         </BrowserRouter>
 

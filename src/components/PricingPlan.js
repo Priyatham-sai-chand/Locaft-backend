@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './pricing-plan.css';
+import NavBar from './NavBar';
 
 class PricingPlan extends Component {
 
     render(){
         return(
             <div className="body">
+                <NavBar />
                 <div class='pricing-plan-container'>
 
                 <section class='pricing-plan '>

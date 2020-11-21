@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../homepage.css';
 import LogInContainer from './LogInContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './NavBar';
 
 
 class  HomePage extends Component {

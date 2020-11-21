@@ -1,25 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
+import '../navbar.css';
 
-const Navbar = () => {
+class  NavBar extends Component {
 
+    render(){
     return(
-        <>
-            <Nav>
-                <NavLink to="/">
-                    <h1 class="brand-name">Locaft</h1>
-                </NavLink>
-                <Bars />
-                <NavMenu>
-                    <NavLink to="/about" activeStyle>About</NavLink>
-                    <NavLink to="/services" activeStyle>services</NavLink>
-                    <NavLink to="/contact-us" activeStyle>contact-us</NavLink>
-                    <NavLink to="/Users/sign-up" activeStyle>Sign-in</NavLink>
-                    
-            
-
-
-                </NavMenu>
-            </Nav>
-        </>
+      <div class="nav">
+  <input type="checkbox" id="nav-check" />
+  <div class="nav-header">
+    <div class="nav-title">
+        locaft
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="//github.io/jo_geek" target="_blank">Github</a>
+    <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
+    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
+    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
+    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
+  </div>
+    </div> 
     )
+    }
 }
+export default NavBar;

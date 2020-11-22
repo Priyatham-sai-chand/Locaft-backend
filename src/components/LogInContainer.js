@@ -8,13 +8,17 @@ import '../login_reg.css';
 class LogInContainer extends Component {
   render() {
     return (
-      <BrowserRouter basename="/user/">
+      <BrowserRouter>
         <div className="Apper">
-          <div className="Apper__Aside"></div>
+          <div className="Apper__Aside">
+            <div className="Apper__Aside__text">
+              locaft
+            </div>
+          </div>
           <div className="Apper__Form">
               <div className="PageSwitcher">
                 <NavLink to="/sign-in" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
-                <NavLink exact to="/sign-up" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
+                <NavLink to="/sign-up" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
               </div>
               <div className="FormTitle">
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> or <NavLink exact to="/sign-up" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>

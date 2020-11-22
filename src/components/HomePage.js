@@ -3,49 +3,27 @@ import '../homepage.css';
 import LogInContainer from './LogInContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './NavBar';
+import NavBar from './NavBar';
 
 
 class  HomePage extends Component {
+
+  
+
   
   render(){
-    return (
+       return (
       
       <div className="HomePage">
+        < NavBar />
+        
+
+        
+        
   <section class="colored-section" id="title">
 
     <div class="container-fluid">
-        
-      
-      <nav class="navbar navbar-expand-lg navbar-dark">
-
-        <a class="navbar-brand" href="">locaft</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#cta">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#login">Sign up or Sign in</a>
-            </li>
-          </ul>
-
-        </div>
-      </nav>
-
-
-
+       
       <div className="row">
         
         <div className="col-lg-6">

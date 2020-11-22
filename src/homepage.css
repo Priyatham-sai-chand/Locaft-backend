@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
 div {
   font-family: "Montserrat";
   text-align: center;
@@ -51,9 +51,15 @@ p {
 }
 
 /* Navigation Bar */
+.header{
+  position:sticky;
+  top:0;
+}
 
 .navbar {
   padding: 0 0 4.5rem;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-brand {

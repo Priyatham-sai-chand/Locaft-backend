@@ -7,11 +7,12 @@
 .Apper__Aside {
   width: 50%;
   background-color: #66DAC7;
+  text-align: center;
 }
 
 .Apper__Form {
   width: 50%;
-  background-color: #2E4158;
+  background-color: #ffffff;
   padding: 25px 40px;
   overflow: auto;
 }
@@ -21,10 +22,16 @@
   justify-content: flex-end;
   margin-bottom: 10%;
 }
+.Apper__Aside__Text{
+ display: -webkit-flex;
+ display: flex;
+ align-items: center;
+ justify-self: center;
+}
 
 .PageSwitcher__Item {
   background-color: #4C5D72;
-  color: #9DA6B1;
+  color: white;
   padding: 10px 25px;
   cursor: pointer;
   font-size: .9em;
@@ -35,7 +42,7 @@
 }
 
 .PageSwitcher__Item--Active {
-  background-color: #5ED0C0;
+  background-color: #66bfbf;
   color: white;
 }
 
@@ -53,7 +60,7 @@
 }
 
 .FormTitle {
-  color: #707C8B;
+  color: #000000;
   font-weight: 300;
   margin-bottom: 50px;
 }
@@ -72,7 +79,7 @@
 }
 
 .FormTitle__Link--Active {
-  color: white;
+  color: #707c8b;
   border-bottom: 1px solid #199087;
 }
 
@@ -84,7 +91,7 @@
   display: block;
   text-transform: uppercase;
   font-size: .9em;
-  color: white;
+  color: #000000;
   text-align: start;
   margin-left:45px;
   

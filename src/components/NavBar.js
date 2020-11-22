@@ -4,30 +4,25 @@ import '../navbar.css';
 class  NavBar extends Component {
 
     render(){
+      window.addEventListener("scroll", () =>{
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky",window.scrollY > 0);
+
+      })
     return(
-      <div class="nav">
-  <input type="checkbox" id="nav-check" />
-  <div class="nav-header">
-    <div class="nav-title">
-        locaft
-    </div>
-  </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-  
-  <div class="nav-links">
-    <a href="//github.io/jo_geek" target="_blank">Github</a>
-    <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
-    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
-    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
-    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
-  </div>
-    </div> 
+      <div class="navbar">
+        <header>
+          <a href="/home" class="logo">locaft</a>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Log In</a></li>
+          </ul>
+        </header>
+      </div>
+      
     )
     }
 }

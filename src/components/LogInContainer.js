@@ -12,7 +12,8 @@ class LogInContainer extends Component {
         <div className="Apper">
           <div className="Apper__Aside">
             <div className="Apper__Aside__text">
-              locaft
+              <p>locaft</p>
+              
             </div>
           </div>
           <div className="Apper__Form">

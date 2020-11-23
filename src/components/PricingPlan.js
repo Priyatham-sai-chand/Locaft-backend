@@ -8,6 +8,9 @@ class PricingPlan extends Component {
         return(
             <div className="body">
                 <NavBar />
+                <br />
+                <br />
+                <br />
                 <div class='pricing-plan-container'>
 
                 <section class='pricing-plan '>

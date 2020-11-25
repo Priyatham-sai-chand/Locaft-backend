@@ -1,57 +1,45 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-class SignInForm extends Component {
-    constructor() {
-        super();
-
-        this.state = {
+const SignInForm = () => {
+    
+        let [data,setData] = useState({
             email: '',
             password: ''
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(e) {
-        let target = e.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
-        let name = target.name;
-
-        this.setState({
-          [name]: value
         });
+
+        
+    const handleChange = e => {
+      
+      setData({...data,[e.target.name]: e.target.value});
+        
+    }
+    const submitData = () => {
+      console.log(data);
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    
 
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
-    }
-
-    render() {
+    let {email,password} = data;
         return (
         <div className="FormCenter">
-            <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
+            <form  className="FormFields">
             <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
-                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
+                <input type="email" id="email" className="FormField__Input" value={ email } placeholder="Enter your email" name="email" onChange={(e) => handleChange(e)} />
               </div>
 
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="password">Password</label>
-                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <input type="password" id="password" className="FormField__Input" value={ password } placeholder="Enter your password" name="password" onChange={(e) => handleChange(e)} />
               </div>
 
               <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign In</button> <Link exact to="/sign-up" className="FormField__Link">Not a member?</Link>
+                  <button className="FormField__Button mr-20" onClick={() => submitData()}>Sign In</button> <Link exact to="/sign-up" className="FormField__Link">Not a member?</Link>
               </div>
             </form>
           </div>
         );
     }
-}
 
 export default SignInForm;

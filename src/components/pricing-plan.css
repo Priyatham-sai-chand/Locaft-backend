@@ -17,7 +17,7 @@
 
 }
 
-.pricing-plan--highlighted {
+.pricing-plan:hover{
 
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     transform: scale(1.05);

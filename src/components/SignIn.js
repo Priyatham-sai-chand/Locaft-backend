@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import store from './store';
 const SignInForm = () => {
     
         let [data,setData] = useState({
@@ -22,7 +23,9 @@ const SignInForm = () => {
 
     let {email,password} = data;
         return (
+          
         <div className="FormCenter">
+          <Provider store={store}></Provider>
             <form  className="FormFields">
             <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>

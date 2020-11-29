@@ -64,7 +64,7 @@ header ul li a {
   color: #fff;
   letter-spacing: 2px;
   font-weight: 500px;
-  padding: 5px 0;
+  padding: 3px 0;
   transition: 0.6s;
 
 
@@ -74,7 +74,8 @@ header ul li a:before{
   content: '';
   left:0;
   bottom: 0;
-  height: 15px;
+  height: 5px;
+  text-decoration: none;
   width:100%;
   background: #ffffff;
   transform: scaleX(0);

@@ -1,120 +1,112 @@
-const express = require('express');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const router = express.Router();
-const { check,validationResult } = require('express-validator');
-const UserSchema = require('../schemas/User');
-const config = require('config');
+const router = require("express").Router();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const auth = require("../middleware/auth");
+const User = require("../models/userModel");
 
-router.post(
-    '/register',
-    [
-        check('email','E-mail is required').isEmail(),
-        check('password','Password is required').notEmpty()
-    ],
-     async (req,res) =>{
-        try{
+router.post("/register", async (req, res) => {
+  try {
+    let { username,email,phonenumber,password} = req.body;
 
-            let { username,email,phonenumber,password } = req.body;
-            let user = await UserSchema.findOne({  email });
-            const errors = validationResult(req);
-            if(!errors.isEmpty()){
-                return res.status(401).json({ errors:errors.array()});
-            }
-            if(user){
-                return res.status(401).json({ msg: "User already exists"});
-            }
+    // validate
 
-            const salt = await bcrypt.genSalt(10);
-            password = await bcrypt.hash(password,salt);
+    if (!email || !password || !passwordCheck)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
+    if (password.length < 5)
+      return res
+        .status(400)
+        .json({ msg: "The password needs to be at least 5 characters long." });
+    if (password !== passwordCheck)
+      return res
+        .status(400)
+        .json({ msg: "Enter the same password twice for verification." });
 
-            user = new UserSchema({
-                username,
-                email,
-                phonenumber,
-                password
-            });
+    const existingUser = await User.findOne({ email: email });
+    if (existingUser)
+      return res
+        .status(400)
+        .json({ msg: "An account with this email already exists." });
 
-            await user.save();
+    if (!username) username = email;
 
-            const payload = {
-                user: {
-                    id: user.id,
-                    
-                }
-            }
-            jwt.sign(
-                payload,
-                config.get('jwtSecret'),
-                (err,token) =>{
-                    if(err) throw err;
-                    res.json({ token });
-                }
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(password, salt);
 
-            )
-            //res.send("cred received");
+    const newUser = new User({
+      username,
+      email,
+      phonenumber,
+      password: passwordHash,
+    });
+    const savedUser = await newUser.save();
+    res.json(savedUser);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-        } catch(error) {
-            console.log(error.message);
-            return res.status(500).json({ msg: "Server Error..."});
-        }
-    
-    }
-)
-router.post(
-    '/login',
-    [
-        check('email',"Type valid e-mail").isEmail(),
-        check('password','Passoword is required').notEmpty()
-    ],
-   async (req,res) => {
-        try{
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-            const { email, password } = req.body;
+    // validate
+    if (!email || !password)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
 
-            let user = await UserSchema.findOne({ email });
-            const errors = validationResult(req);
+    const user = await User.findOne({ email: email });
+    if (!user)
+      return res
+        .status(400)
+        .json({ msg: "No account with this email has been registered." });
 
-            if(!errors.isEmpty()){
-                return res.status(401).json({
-                    errors: errors.array()
-                });
-            }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-            if(!user) {
-                return res.status(401).json({ msg: "This user doesn't exists"});
-            }
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-            let isPassowardMatch = await bcrypt.compare(password,user.password);
+router.delete("/delete", auth, async (req, res) => {
+  try {
+    const deletedUser = await User.findByIdAndDelete(req.user);
+    res.json(deletedUser);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-            if(isPassowardMatch){
-                const payload = {
-                    user: {
-                        id: user.id,
-                        
-                    }
-                }
-                jwt.sign(
-                    payload,
-                    config.get('jwtSecret'),
-                    (err,token) =>{
-                        if(err) throw err;
-                        res.json({ token });
-                    }
-                )
+router.post("/tokenIsValid", async (req, res) => {
+  try {
+    const token = req.header("x-auth-token");
+    if (!token) return res.json(false);
 
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    if (!verified) return res.json(false);
 
-            }else return res.status(401).json({
-                msg:"incorrect Passoword"
-            });
+    const user = await User.findById(verified.id);
+    if (!user) return res.json(false);
 
-        } catch (error) {
-            console.log(error.message);
-            return res.status(500).json({
-                msg:"serve error ...."
-            });
-        }
+    return res.json(true);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-    }
-)
+router.get("/", auth, async (req, res) => {
+  const user = await User.findById(req.user);
+  res.json({
+    username: user.username,
+    id: user._id,
+  });
+});
+
 module.exports = router;

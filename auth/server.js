@@ -1,14 +1,33 @@
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+// set up express
+
 const app = express();
-const connectToDb = require('./config/connectToDb');
+app.use(express.json());
+app.use(cors());
 
-connectToDb();
-app.use(express.json({ extended: false }));
+const PORT = process.env.PORT || 6000;
 
-app.use('/api/users',require('./routes/users'));
+app.listen(PORT, () => console.log(`The server has started on port: ${PORT}`));
 
+// set up mongoose
 
-let PORT = process.env.PORT || 6000;
+mongoose.connect(
+  process.env.MONGODB_CONNECTION_STRING,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  (err) => {
+    if (err) throw err;
+    console.log("MongoDB connection established");
+  }
+);
 
-app.listen(PORT,() => console.log(`server is running on port: ${PORT}`));
+// set up routes
 
+app.use("/users", require("./routes/userRouter"));

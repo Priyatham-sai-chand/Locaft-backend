@@ -2,7 +2,8 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
-const User = require("../models/userModel");
+const User = require("../schemas/User");
+const config = require("config");
 
 router.post("/register", async (req, res) => {
   try {
@@ -10,16 +11,12 @@ router.post("/register", async (req, res) => {
 
     // validate
 
-    if (!email || !password || !passwordCheck)
+    if (!email || !password )
       return res.status(400).json({ msg: "Not all fields have been entered." });
     if (password.length < 5)
       return res
         .status(400)
         .json({ msg: "The password needs to be at least 5 characters long." });
-    if (password !== passwordCheck)
-      return res
-        .status(400)
-        .json({ msg: "Enter the same password twice for verification." });
 
     const existingUser = await User.findOne({ email: email });
     if (existingUser)
@@ -62,7 +59,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
     res.json({
       token,
       user: {

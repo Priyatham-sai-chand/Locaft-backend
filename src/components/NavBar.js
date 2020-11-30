@@ -1,66 +1,54 @@
-import React, { useState, useEffect, Component} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from "react-router-dom";
 import '../navbar.css';
 import Axios from "axios";
+import UserContext from "../context/UserContext";
 
 export default function NavBar() {
-  const [userData, setUserData] = useState({
-    token: undefined,
-    user: undefined,
-  });
+  const { userData, setUserData } = useContext(UserContext);
 
-  useEffect(() => {
-    const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
-      if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = "";
-      }
-      const tokenRes = await Axios.post(
-        "http://localhost:5000/users/tokenIsValid",
-        null,
-        { headers: { "x-auth-token": token } }
-      );
-      if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:5000/users/", {
-          headers: { "x-auth-token": token },
-        });
-        setUserData({
-          token,
-          user: userRes.data,
-        });
-      }
-    };
+  const history = useHistory();
 
-    checkLoggedIn();
-  }, []);
+  const register = () => history.push("/register");
+  const login = () => history.push("/login");
+  const logout = () => {
+    setUserData({
+      token: undefined,
+      user: undefined,
+    });
+    localStorage.setItem("auth-token", "");
+  };
+  window.addEventListener("scroll", () => {
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
 
-      window.addEventListener("scroll", () =>{
-        var header = document.querySelector("header");
-        header.classList.toggle("sticky",window.scrollY > 0);
-
-      })
-    return(
-      <div class="navbar">
-        <header>
-          <input type="checkbox" id="check"/>
-          <label for="check" class="checkbtn">
-            <i class="fas fa-bars" id="btn"></i>
-            </label>
+  })
+  return (
+    <div class="navbar">
+      <header>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars" id="btn"></i>
+        </label>
 
 
-          <a href="/home" class="logo">locaft</a>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Log In</a></li>
-          </ul>
-          
-        </header>
-      </div>
-      
-    )
-    }
+        <a href="/home" class="logo">locaft</a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Log In</a></li>
+          {userData.user ? (
+            <li><a href="#">Log Out</a></li>
+          ) : (
+              <li><a href="#">Register</a></li>
+            )}
+        </ul>
+
+      </header>
+    </div>
+
+  )
+}
 

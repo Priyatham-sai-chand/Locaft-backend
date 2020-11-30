@@ -6,7 +6,7 @@ import Axios from "axios";
 import { Link } from "react-router-dom";
 import ErrorNotice from "./ErrorNotice";
 
-const SignInForm = () => {
+const Login = () => {
     
        const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -58,4 +58,4 @@ const SignInForm = () => {
         );
     }
 
-export default SignInForm;
+export default Login;

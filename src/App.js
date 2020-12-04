@@ -3,8 +3,10 @@ import Axios from 'axios';
 import HomePage from "./components/HomePage";
 import PricingPlan from "./components/PricingPlan";
 import LogInContainer from "./components/LogInContainer";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router,BrowserRouter, Route, Switch } from 'react-router-dom';
 import UserContext from "./context/UserContext";
+import Tracking from "./components/Tracking";
+import Options from "./components/Options";
 
 export default function App() {
   const [userData, setUserData ] = useState({
@@ -45,9 +47,11 @@ export default function App() {
         <BrowserRouter>
         <UserContext.Provider value= {{userData, setUserData}}>
           <Switch>
-            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/user" component={LogInContainer} />
             <Route path="/pricing" component={PricingPlan} />
+            <Route path="/track" component={Tracking} />
+            <Route path="/options" component={Options} />
           </Switch>
           </UserContext.Provider>
         </BrowserRouter>

@@ -17,9 +17,6 @@ class  HomePage extends Component {
       <div className="HomePage">
         < NavBar />
         
-
-        
-        
   <section class="colored-section" id="title">
 
     <div class="container-fluid">

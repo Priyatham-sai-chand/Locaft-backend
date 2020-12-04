@@ -9,8 +9,8 @@ export default function NavBar() {
 
   const history = useHistory();
 
-  const register = () => history.push("/register");
-  const login = () => history.push("/login");
+  const register = () => history.push("/user/register");
+  const login = () => history.push("/home");
   const logout = () => {
     setUserData({
       token: undefined,
@@ -38,11 +38,13 @@ export default function NavBar() {
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact us</a></li>
-          <li><a href="#">Log In</a></li>
           {userData.user ? (
-            <li><a href="#">Log Out</a></li>
+            <li><a href="#" onClick={logout}>Log Out</a></li>
           ) : (
-              <li><a href="#">Register</a></li>
+              <React.Fragment>
+              <li><a href="#" onclick={register}>Register</a></li>
+              <li><button type="button" onclick={login}>login</button></li>
+              </React.Fragment>
             )}
         </ul>
 

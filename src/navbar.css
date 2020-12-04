@@ -56,7 +56,7 @@ header ul li {
   
   
 }
-header ul li a {
+header ul li a  {
 
   position: relative;
   margin: 5px 15px;
@@ -69,24 +69,16 @@ header ul li a {
 
 
 }
-header ul li a:before{
+header ul li a button:before{
   position: absolute;
   content: '';
   left:0;
   bottom: 0;
   height: 5px;
   text-decoration: none;
-  width:100%;
-  background: #ffffff;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform .4s linear;
+  
 }
-header ul li a:hover:before{
 
-  transform: scaleX(1);
-  transform-origin: left;
-}
 header.sticky ul li a{
   color: #fff;
   
@@ -129,7 +121,6 @@ header.sticky ul li a{
     height: 100vh;
     background: #66bfbf;
     text-align: center;
-    transition: all .5s;
   }
   header ul li{
 

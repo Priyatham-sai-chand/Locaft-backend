@@ -30,9 +30,9 @@ import ErrorNotice from "./ErrorNotice";
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/");
+      history.push("/home");
     } catch (err) {
-      err.response.data.msg && setError(err.response.data.msg);
+      return err.response.data.msg && setError(err.response.data.msg);
     }
   };
 
@@ -81,7 +81,7 @@ import ErrorNotice from "./ErrorNotice";
           id="phonenumber" 
           className="FormField__Input" 
           placeholder="Enter your Phone no. (+91)"
-          onChange= { (e) => setPhonenumber(e.target.value)}
+          onChange= { (e) => setPhonenumber(parseInt( e.target.value,10))}
             />
         </div>
 
@@ -92,7 +92,7 @@ import ErrorNotice from "./ErrorNotice";
         </div>
 
         <div className="FormField">
-          <button className="FormField__Button mr-20">Sign Up</button> <Link to="/sign-in" className="FormField__Link">already a member?</Link>
+          <button className="FormField__Button mr-20" type="submit">Sign Up</button> <Link to="/sign-in" className="FormField__Link">already a member?</Link>
         </div>
       </form>
     </div>

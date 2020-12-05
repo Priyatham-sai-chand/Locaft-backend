@@ -38,12 +38,13 @@ export default function NavBar() {
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact us</a></li>
+          <li><a href="#" onClick={logout}>Log Out</a></li>
           {userData.user ? (
             <li><a href="#" onClick={logout}>Log Out</a></li>
           ) : (
               <React.Fragment>
               <li><a href="#" onclick={register}>Register</a></li>
-              <li><button type="button" onclick={login}>login</button></li>
+              <li><a  href="#" onclick={login}>login</a></li>
               </React.Fragment>
             )}
         </ul>

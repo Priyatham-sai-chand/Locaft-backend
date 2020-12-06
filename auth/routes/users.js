@@ -5,6 +5,14 @@ const auth = require("../middleware/auth");
 const User = require("../schemas/User");
 const config = require("config");
 
+router.get("/", async(req,res) => {
+
+  console.log(config.get('jwtSecret'));
+  return "<h1>asdf<h1/>";
+
+  
+});
+
 router.post("/register", async (req, res) => {
   try {
     let { username,email,phonenumber,password} = req.body;
@@ -60,6 +68,7 @@ router.post("/login", async (req, res) => {
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
     const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
+    if(token) return res.json
     res.json({
       token,
       user: {
@@ -84,13 +93,14 @@ router.delete("/delete", auth, async (req, res) => {
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
-    if (!token) return res.json(false);
+    if (!token) return res.json({error: qwer});
 
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
-    if (!verified) return res.json(false);
+    const verified = jwt.verify(token, config.get("jwtSecret"));
+
+    if (!verified) return res.json({error: asdf});
 
     const user = await User.findById(verified.id);
-    if (!user) return res.json(false);
+    if (!user) return res.json({error: zxcv});
 
     return res.json(true);
   } catch (err) {

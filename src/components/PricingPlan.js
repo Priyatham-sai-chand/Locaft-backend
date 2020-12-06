@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './pricing-plan.css';
+import '../pricing-plan.css';
 import NavBar from './NavBar';
 
 class PricingPlan extends Component {

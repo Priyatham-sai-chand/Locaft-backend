@@ -1,5 +1,5 @@
 import React from 'react';
-import './tracking.css';
+import '../tracking.css';
 
 export default function Tracking() {
     document.addEventListener('DOMContentLoaded', () => {

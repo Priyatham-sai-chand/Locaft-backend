@@ -8,11 +8,12 @@ import ErrorNotice from "./ErrorNotice";
 
 const Login = () => {
     
-       const [email, setEmail] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
+  
   const history = useHistory();
 
   const submit = async (e) => {
@@ -23,12 +24,13 @@ const Login = () => {
         "http://localhost:5000/users/login",
         loginUser
       );
+      console.log(loginRes);
       setUserData({
         token: loginRes.data.token,
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/");
+      history.push("/register");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }

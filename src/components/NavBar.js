@@ -23,28 +23,28 @@ export default function NavBar() {
     header.classList.toggle("sticky", window.scrollY > 0);
 
   })
+  console.log(userData);
   return (
-    <div class="navbar">
+    <div className="navbar">
       <header>
         <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars" id="btn"></i>
+        <label htmlFor="check" className="checkbtn">
+          <i className="fas fa-bars" id="btn"></i>
         </label>
 
 
-        <a href="/home" class="logo">locaft</a>
+        <a href="/home" className="logo">locaft</a>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact us</a></li>
-          <li><a href="#" onClick={logout}>Log Out</a></li>
           {userData.user ? (
             <li><a href="#" onClick={logout}>Log Out</a></li>
           ) : (
               <React.Fragment>
-              <li><a href="#" onclick={register}>Register</a></li>
-              <li><a  href="#" onclick={login}>login</a></li>
+              <li><a href="#" onClick={register}>Register</a></li>
+              <li><a  href="#" onClick={login}>login</a></li>
               </React.Fragment>
             )}
         </ul>

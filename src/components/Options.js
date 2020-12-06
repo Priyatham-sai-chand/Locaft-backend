@@ -1,5 +1,5 @@
 import React from 'react';
-import './options.css';
+import '../options.css';
 
 export default function Options() {
 

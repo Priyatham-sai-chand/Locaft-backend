@@ -5,13 +5,6 @@ const auth = require("../middleware/auth");
 const User = require("../schemas/User");
 const config = require("config");
 
-router.get("/", async(req,res) => {
-
-  console.log(config.get('jwtSecret'));
-  return "<h1>asdf<h1/>";
-
-  
-});
 
 router.post("/register", async (req, res) => {
   try {
@@ -68,8 +61,8 @@ router.post("/login", async (req, res) => {
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
     const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
-    if(token) return res.json
-    res.json({
+    if(token) return res
+    .json({
       token,
       user: {
         id: user._id,
@@ -93,14 +86,14 @@ router.delete("/delete", auth, async (req, res) => {
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
-    if (!token) return res.json({error: qwer});
+    if (!token) return res.json({error: message});
 
     const verified = jwt.verify(token, config.get("jwtSecret"));
 
-    if (!verified) return res.json({error: asdf});
+    if (!verified) return res.json({error: message});
 
     const user = await User.findById(verified.id);
-    if (!user) return res.json({error: zxcv});
+    if (!user) return res.json({error: message});
 
     return res.json(true);
   } catch (err) {
@@ -110,6 +103,7 @@ router.post("/tokenIsValid", async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
   const user = await User.findById(req.user);
+  console.log(user);
   res.json({
     username: user.username,
     id: user._id,

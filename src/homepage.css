@@ -6,6 +6,11 @@ div {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat-Bold";
+  color: white;
+
+}
+h1 {
+  color: white !important;
 }
 
 p {
@@ -51,31 +56,7 @@ p {
 }
 
 /* Navigation Bar */
-.header{
-  position:sticky;
-  top:0;
-}
 
-.navbar {
-  padding: 0 0 4.5rem;
-  position: sticky;
-  top: 0;
-}
-
-.navbar-brand {
-  font-family: "Ubuntu";
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.nav-item {
-  padding: 0 18px;
-}
-
-.nav-link {
-  font-size: 1.2rem;
-  font-family: "Montserrat-Light";
-}
 
 /* Buttons */
 
@@ -192,11 +173,3 @@ p {
   }
 }
 
-/* Login Page */
-
-.login-heading{
-  margin: 3% 5%;
-}
-.signup .signin{
-  margin: 10% 3%;
-}

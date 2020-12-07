@@ -1,4 +1,4 @@
-import React, { Component, useState, useContext } from "react";
+import React, {  useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Axios from "axios";
@@ -87,7 +87,7 @@ import ErrorNotice from "./ErrorNotice";
 
         <div className="FormField">
           <label className="FormField__CheckboxLabel">
-            <input className="FormField__Checkbox" type="checkbox" name="hasAgreed" /> I agree all statements in <a href="" className="FormField__TermsLink">terms of service</a>
+            <input className="FormField__Checkbox" type="checkbox" name="hasAgreed" /> I agree all statements in <a href="/" className="FormField__TermsLink">terms of service</a>
           </label>
         </div>
 

@@ -1,10 +1,9 @@
 
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Axios from "axios";
-import { Link } from "react-router-dom";
 import ErrorNotice from "./ErrorNotice";
+import { Link, useHistory, withRouter } from "react-router-dom";
 
 const Login = () => {
     
@@ -12,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [error, setError] = useState();
 
-  const { setUserData } = useContext(UserContext);
+ const { userData,setUserData } = useContext(UserContext);
   
   const history = useHistory();
 
@@ -24,13 +23,13 @@ const Login = () => {
         "http://localhost:5000/users/login",
         loginUser
       );
-      console.log(loginRes);
       setUserData({
         token: loginRes.data.token,
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/register");
+      console.log(userData);
+      history.push("/");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
@@ -38,6 +37,9 @@ const Login = () => {
         return (
           
         <div className="FormCenter">
+          {error && (
+        <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      )}
             <form  className="FormFields" onSubmit={submit}>
             <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
@@ -53,11 +55,9 @@ const Login = () => {
                   <button className="FormField__Button mr-20" >Sign In</button> <Link exact to="/sign-up" className="FormField__Link">Not a member?</Link>
               </div>
             </form>
-            {error && (
-        <ErrorNotice message={error} clearError={() => setError(undefined)} />
-      )}
+            
           </div>
         );
     }
 
-export default Login;
+export default withRouter(Login);

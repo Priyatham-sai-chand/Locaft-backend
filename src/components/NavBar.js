@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from "react-router-dom";
+import React, {  useContext } from 'react';
+import { Link } from "react-router-dom";
 import '../navbar.css';
-import Axios from "axios";
 import UserContext from "../context/UserContext";
 
 export default function NavBar() {
   const { userData, setUserData } = useContext(UserContext);
+  
 
-  const history = useHistory();
 
-  const register = () => history.push("/user/register");
-  const login = () => history.push("/home");
   const logout = () => {
     setUserData({
       token: undefined,
@@ -33,18 +30,18 @@ export default function NavBar() {
         </label>
 
 
-        <a href="/home" className="logo">locaft</a>
+        <a href="/" className="logo">locaft</a>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about-us">About</a></li>
+          <li><a href="/#features">Services</a></li>
+          <li><a href="/#footer">Contact us</a></li>
           {userData.user ? (
-            <li><a href="#" onClick={logout}>Log Out</a></li>
+            <li><Link onClick={logout}>{userData.user.username}</Link></li>
           ) : (
               <React.Fragment>
-              <li><a href="#" onClick={register}>Register</a></li>
-              <li><a  href="#" onClick={login}>login</a></li>
+              <li><Link to="/user/register">Register</Link></li>
+              <li><Link  to="/user/login">login</Link></li>
               </React.Fragment>
             )}
         </ul>

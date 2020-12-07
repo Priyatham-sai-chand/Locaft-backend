@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import '../homepage.css';
-import LogInContainer from './LogInContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './NavBar';
 import NavBar from './NavBar';
+import { useHistory } from "react-router-dom";
 
 
-class  HomePage extends Component {
-  render(){
+export default function  HomePage(){
+  const history = useHistory();
+   
        return (
       
       <div className="HomePage">
@@ -21,9 +21,11 @@ class  HomePage extends Component {
         
         <div className="col-lg-6">
           <h1 className="big-heading">Adapt to a new place easy peasy.</h1>
-          <button type="button" className = "btn btn-info login mr-1">Log In</button>
+          <button type="button" onClick={() => {
+            history.push("/user/login")
+          }} className = "btn btn-info login mr-1">Log In</button>
           
-          <button type="button" className="btn btn-info loginb" >Sign Up</button>
+          <button type="button" className="btn btn-info loginb" onClick={() => history.push("/user/register")} >Sign Up</button>
 
         </div>
         
@@ -162,6 +164,4 @@ class  HomePage extends Component {
 
     );
   }
-}
 
-export default HomePage;

@@ -5,9 +5,6 @@ import UserContext from "../context/UserContext";
 
 export default function NavBar() {
   const { userData, setUserData } = useContext(UserContext);
-  
-
-
   const logout = () => {
     setUserData({
       token: undefined,
@@ -15,21 +12,19 @@ export default function NavBar() {
     });
     localStorage.setItem("auth-token", "");
   };
-  window.addEventListener("scroll", () => {
-    var header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
-
-  })
-  console.log(userData);
+  document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener("scroll", () => {
+      var header = document.getElementById("navheader");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  });
   return (
     <div className="navbar">
-      <header>
+      <header id="navheader">
         <input type="checkbox" id="check" />
         <label htmlFor="check" className="checkbtn">
           <i className="fas fa-bars" id="btn"></i>
         </label>
-
-
         <a href="/" className="logo">locaft</a>
         <ul>
           <li><a href="/">Home</a></li>

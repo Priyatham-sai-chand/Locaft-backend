@@ -1,6 +1,15 @@
 import React from 'react';
 import '../options.css';
+import Card from './HouseCard';
+import styled from 'styled-components';
 
+const CardList = styled.div`
+    z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`;
 export default function Options() {
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +23,7 @@ export default function Options() {
         let currentStep = 1;
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                bullets[currentStep - 1].classList.add('completed');
+                bullets[currentStep - 1].classNameList.add('completed');
                 currentStep += 1;
                 previousBtn.disabled = false;
                 if (currentStep === MAX_STEPS) {
@@ -29,7 +38,7 @@ export default function Options() {
 
         if (previousBtn) {
             previousBtn.addEventListener('click', () => {
-                bullets[currentStep - 2].classList.remove('completed');
+                bullets[currentStep - 2].classNameList.remove('completed');
                 currentStep -= 1;
                 nextBtn.disabled = false;
                 finishBtn.disabled = true;
@@ -50,27 +59,31 @@ export default function Options() {
 
     return (
 
-        <div class="container">
+        <div className="container">
             <div id="stepProgressBar">
-                <div class="step">
-                    <p class="step-text">About</p>
-                    <div class="bullet">1</div>
+                <div className="step">
+                    <p className="step-text">About</p>
+                    <div className="bullet">1</div>
                 </div>
-                <div class="step">
-                    <p class="step-text">Contact</p>
-                    <div class="bullet">2</div>
+                <div className="step">
+                    <p className="step-text">Contact</p>
+                    <div className="bullet">2</div>
                 </div>
-                <div class="step">
-                    <p class="step-text">Step 3</p>
-                    <div class="bullet">3</div>
+                <div className="step">
+                    <p className="step-text">Step 3</p>
+                    <div className="bullet">3</div>
                 </div>
-                <div class="step">
-                    <p class="step-text">Step 4</p>
-                    <div class="bullet ">4</div>
+                <div className="step">
+                    <p className="step-text">Step 4</p>
+                    <div className="bullet ">4</div>
                 </div>
             </div>
-            <div id="main">
-                <p id="content" class="text-center">Step Number 1</p>
+            <CardList>
+                <Card img="https://i.redd.it/b3esnz5ra34y.jpg" />
+                <Card img="https://i.redd.it/b3esnz5ra34y.jpg" />
+            </CardList>
+                <div id="main">
+                <p id="content" className="text-center">Step Number 1</p>
                 <button id="previousBtn" >Previous</button>
                 <button id="nextBtn">Next</button>
                 <button id="finishBtn" >Finish</button>

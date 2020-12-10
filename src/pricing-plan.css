@@ -83,7 +83,7 @@
 .pricing-plan__feature:not(:last-child) {
     
 
-    margin-bottom: 0.5em;
+    margin-bottom: 2em;
     
 }
 .pricing-plan__feature::before {
@@ -92,6 +92,7 @@
     color: #009578;
     position: absolute;
     left: 0;
+    
 }
 
 .pricing-plan__actions {

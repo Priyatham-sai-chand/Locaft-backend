@@ -30,7 +30,6 @@ class PricingPlan extends Component {
                     < div class='pricing-plan__actions'>
                         <p class='pricing-plan__cost'>$10</p>
                         <p class='pricing-plan__text'>per month</p>
-                        <a href='./' class='pricing-plan__button'>Purchase</a>
                         <p class='pricing-plan__text'>Minimum spend over 12 months</p>
 
                     </div>
@@ -53,7 +52,6 @@ class PricingPlan extends Component {
                     < div class='pricing-plan__actions'>
                         <p class='pricing-plan__cost'>$50</p>
                         <p class='pricing-plan__text'>per month</p>
-                        <a href='./' class='pricing-plan__button'>Purchase</a>
                         <p class='pricing-plan__text'>Minimum spend over 12 months</p>
 
                     </div>
@@ -75,7 +73,6 @@ class PricingPlan extends Component {
                     < div class='pricing-plan__actions'>
                         <p class='pricing-plan__cost'>$100</p>
                         <p class='pricing-plan__text'>per month</p>
-                        <a href='./' class='pricing-plan__button'>Purchase</a>
                         <p class='pricing-plan__text'>Minimum spend over 12 months</p>
 
                     </div>
@@ -83,6 +80,7 @@ class PricingPlan extends Component {
 
 
                 </div>
+                        <a href='./' class='pricing-plan__button'>Purchase</a>
 
                 
 

@@ -8,7 +8,7 @@ import UserContext from "./context/UserContext";
 import Options from "./components/Options";
 import Stepper from './components/Stepper';
 import NavBar from "./components/NavBar";
-
+import FillingDetails from "./components/FillingDetails";
 export default function App() {
   const [userData, setUserData ] = useState({
     token: undefined,
@@ -55,6 +55,7 @@ export default function App() {
             <Route path="/pricing" component={PricingPlan} />
             <Route path="/track" component={Stepper} />
             <Route path="/options" component={Options} />
+            <Route path="/details" component={FillingDetails} />
             <Route path="/" render={() => <div>404</div>}/>
           </Switch>
           </UserContext.Provider>

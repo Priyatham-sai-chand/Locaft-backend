@@ -21,9 +21,8 @@ export default function Options() {
 
         const MAX_STEPS = 4;
         let currentStep = 1;
-        if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                bullets[currentStep - 1].classNameList.add('completed');
+                bullets[currentStep - 1].classList.add('completed');
                 currentStep += 1;
                 previousBtn.disabled = false;
                 if (currentStep === MAX_STEPS) {
@@ -33,12 +32,11 @@ export default function Options() {
                 content.innerText = `Step Number ${currentStep}`;
 
             });
-        }
+        
 
 
-        if (previousBtn) {
             previousBtn.addEventListener('click', () => {
-                bullets[currentStep - 2].classNameList.remove('completed');
+                bullets[currentStep - 2].classList.remove('completed');
                 currentStep -= 1;
                 nextBtn.disabled = false;
                 finishBtn.disabled = true;
@@ -47,13 +45,12 @@ export default function Options() {
                 }
                 content.innerText = `Step Number ${currentStep}`;
             });
-        }
+        
 
-        if (finishBtn) {
             finishBtn.addEventListener('click', () => {
                 window.location.reload();
             });
-        }
+        
 
     })
 
@@ -78,10 +75,8 @@ export default function Options() {
                     <div className="bullet ">4</div>
                 </div>
             </div>
-            <CardList>
-                <Card img="https://i.redd.it/b3esnz5ra34y.jpg" />
-                <Card img="https://i.redd.it/b3esnz5ra34y.jpg" />
-            </CardList>
+            
+            
                 <div id="main">
                 <p id="content" className="text-center">Step Number 1</p>
                 <button id="previousBtn" >Previous</button>

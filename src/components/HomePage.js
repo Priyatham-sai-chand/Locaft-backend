@@ -69,12 +69,10 @@ export default function  HomePage(){
       <div className="carousel-inner">
         <div className="carousel-item active container-fluid">
           <h2 className="testimonial-text">I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</h2>
-          <img className="testimonial-image" src="Images/WhatsApp Image 2020-09-18 at 5.38.53 PM.jpeg" alt="mc-profile" />
           <em>Mani , Hyderabad</em>
         </div>
         <div className="carousel-item container-fluid">
           <h2 className="testimonial-text">Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h2>
-          <img className="testimonial-image" src="Images/WhatsApp Image 2020-09-18 at 5.38.39 PM.jpeg" alt="nishi-profile" />
           <em>Nishanth , Bangalore</em>
         </div>
       </div>
@@ -88,10 +86,11 @@ export default function  HomePage(){
 
   </section>
   <section className="colored-section" id="press">
-    <img className="press-logo" src="/indigo.png" alt="indigo-logo" />
+      <h3 className="big-heading">Our Partners</h3>
+    <img className="press-logo" src="/indigo.jpg" alt="indigo-logo" />
     <img className="press-logo" src="/avasa.jpg" alt="avasa-logo" />
     <img className="press-logo" src="/vrl.jpg" alt="vrl-logo" />
-    <img className="press-logo" src="/nobroker.png" alt="nobroker-logo" />
+    <img className="press-logo" src="/nobroker.jpg" alt="nobroker-logo" />
 
   </section>
   <section className="white-section" id="about-us">

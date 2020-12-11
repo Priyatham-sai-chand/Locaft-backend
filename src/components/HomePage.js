@@ -3,6 +3,19 @@ import '../homepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar';
 import { useHistory } from "react-router-dom";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Carousel,
+
+} from "react-bootstrap";
+
+const ITag = styled.i`
+  
+
+`;
 
 
 export default function  HomePage(){

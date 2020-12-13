@@ -92,7 +92,7 @@ import ErrorNotice from "./ErrorNotice";
         </div>
 
         <div className="FormField">
-          <button className="FormField__Button mr-20" type="submit">Sign Up</button> <Link to="/sign-in" className="FormField__Link">already a member?</Link>
+          <button className="FormField__Button mr-20" type="submit">Sign Up</button> <Link to="/login" className="FormField__Link">already a member?</Link>
         </div>
       </form>
     </div>

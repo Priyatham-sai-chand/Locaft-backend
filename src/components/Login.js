@@ -52,7 +52,7 @@ const Login = () => {
               </div>
 
               <div className="FormField">
-                  <button className="FormField__Button mr-20" >Sign In</button> <Link exact to="/sign-up" className="FormField__Link">Not a member?</Link>
+                  <button className="FormField__Button mr-20" >Sign In</button> <Link exact to="/register" className="FormField__Link">Not a member?</Link>
               </div>
             </form>
             

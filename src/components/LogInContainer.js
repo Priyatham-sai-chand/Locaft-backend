@@ -11,10 +11,17 @@ class LogInContainer extends Component {
         <BrowserRouter basename="user">
         <div className="Apper">
           <div className="Apper__Aside">
-            <div className="Apper__Aside__text">
-              <p>locaft</p>
-              
+            <div className="Apper_logo">
+            <img src="/logo.jpg"></img>
             </div>
+            <div className="Apper__Aside__text">
+              <h1 className="Apper_heading">locaft</h1>
+              <p className="Apper_quote">Sit back, let us move you</p>
+
+            </div>
+             <div className="Apper_Aside_image">
+                <img src="/skyscraper.png"></img>
+              </div>
           </div>
           <div className="Apper__Form">
               <div className="PageSwitcher">

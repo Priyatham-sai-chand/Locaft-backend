@@ -6,10 +6,10 @@
 
 .Apper__Aside {
   width: 50%;
-  background-color: #66DAC7;
+  background-color: #66bfbf;
   display:flex;
-  align-items: center;
-  justify-self: center;
+  flex-direction: column;
+  justify-content: flex-end;
   
 
 }
@@ -26,13 +26,9 @@
   justify-content: flex-end;
   margin-bottom: 10%;
 }
-.Apper__Aside__text{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Apper__Aside__text p{
-
+.Apper_heading{
+  position: relative;
+  text-align: center;
   font-family: "Ubuntu";
   font-size: 5rem;
   font-weight: bold;
@@ -40,12 +36,30 @@
   color: white;
   text-decoration: none;
   text-transform: lowercase;
-  left: 150%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
+}
+.Apper_logo img{
+  width:100px;
+  display:flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 120px;
   
-  flex-grow: 1;
+}
+
+.Apper__Aside__text {
+  text-align: center;
+  margin-bottom: 40px; 
+  
+}
+.Apper_quote{
+  color:white;
+  font-size: 1.25em;
+  font-style:italic;
+}
+.Apper__Aside_image{
+  margin-top: 600px;
+  max-width: 100%;
+  
   
 }
 

@@ -11,6 +11,7 @@ import {
   Carousel,
 
 } from "react-bootstrap";
+import styled from 'styled-components';
 
 const ITag = styled.i`
   

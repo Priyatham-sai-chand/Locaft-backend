@@ -35,6 +35,9 @@ class LogInContainer extends Component {
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
           </Switch>
+          <p>
+
+          </p>
 
           </div>
 

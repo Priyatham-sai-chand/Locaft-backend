@@ -15,7 +15,7 @@ export default function NavBar() {
   document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("scroll", () => {
       var header = document.getElementById("navheader");
-      header.classList.toggle("sticky", window.scrollY > 0);
+      header.classList.toggle("sticky", window.scrollY > 1);
     });
   });
   return (

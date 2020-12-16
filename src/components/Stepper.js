@@ -1,4 +1,5 @@
 import React  from 'react';
+import Footer from './Footer';
 import  '../stepper.css';
 
 export default function Stepper() {
@@ -45,7 +46,7 @@ clear.addEventListener('click', function() {
 
   return (
     <div className="container">
-      <h1>Relocation Status</h1>
+      <h1 className ="relocheading">Relocation Status</h1>
       <br />
       <br />
       <br />
@@ -60,6 +61,7 @@ clear.addEventListener('click', function() {
       </ul>
       <input type="button" value="Next" id="next" />
       <input type="button" value="Clear" id="clear" />
+      <Footer />
     </div>
   )
 

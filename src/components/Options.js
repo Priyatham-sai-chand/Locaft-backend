@@ -1,6 +1,7 @@
 import React from 'react';
 import '../options.css';
 import Card from './HouseCard';
+import Footer from "./Footer";
 import styled from 'styled-components';
 
 const CardList = styled.div`
@@ -83,6 +84,7 @@ export default function Options() {
                 <button id="nextBtn">Next</button>
                 <button id="finishBtn" >Finish</button>
             </div>
+            <Footer />
         </div>
     )
 

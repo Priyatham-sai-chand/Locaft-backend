@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import '../tracking.css';
 
 export default function Tracking() {
@@ -95,6 +96,7 @@ export default function Tracking() {
                 <button id="nextBtn">Next</button>
                 <button id="finishBtn" >Finish</button>
             </div>
+            <Footer />
         </div>
 
     )

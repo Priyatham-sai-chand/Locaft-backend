@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, NavLink, Switch,withRouter } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
+import Footer from './Footer';
 
 import '../login_reg.css';
 
@@ -42,6 +43,7 @@ class LogInContainer extends Component {
           </div>
 
         </div>
+          <Footer background="blue"/>
         </BrowserRouter>
     );
   }

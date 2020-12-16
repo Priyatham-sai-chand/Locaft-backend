@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../pricing-plan.css';
 import NavBar from './NavBar';
-
+import Footer from './Footer';
 class PricingPlan extends Component {
 
     render(){
@@ -81,6 +81,7 @@ class PricingPlan extends Component {
 
                 </div>
                         <a href='./' class='pricing-plan__button'>Purchase</a>
+                    <Footer />
 
                 
 

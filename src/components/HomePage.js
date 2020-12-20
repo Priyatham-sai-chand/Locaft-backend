@@ -17,6 +17,10 @@ const ITag = styled.i`
   
 
 `;
+const FeatureBox = styled.div`
+  padding: 4.5%;
+
+`;
 
 
 export default function  HomePage(){
@@ -29,32 +33,33 @@ export default function  HomePage(){
         
   <section className="colored-section" id="title">
 
-    <div className="container-fluid">
+    <Container fluid>
        
-      <div className="row">
+      <Row>
         
-        <div className="col-lg-6">
-          <h1 className="big-heading">Adapt to a new place easy peasy.</h1>
+        <Col lg6>
+          <h1 className="big-sdf
+          heading">Adapt to a new place easy peasy.</h1>
           <button type="button" onClick={() => {
             history.push("/user/login")
           }} className = "btn btn-info login mr-1">Log In</button>
           
           <button type="button" className="btn btn-info loginb" onClick={() => history.push("/user/register")} >Sign Up</button>
 
-        </div>
+        </Col>
         
-        <div className="col-lg-6">
+        <Col lg6>
           <img className="title-image" src="/locaft.png" alt="locaft-mockup" />
-        </div>
+        </Col>
         
-      </div>
-    </div>
+      </Row>
+    </Container>
   </section>
   <section className="white-section" id="features">
 
-    <div className="container-fluid">
+    <Container fluid>
 
-      <div className="row">
+      <Row>
         <div className="feature-box col-lg-4">
           <i className="icon fas fa-check-circle fa-4x"></i>
           <h3 className="feature-title">Easy to use.</h3>
@@ -72,10 +77,10 @@ export default function  HomePage(){
           <h3 className="feature-title">Relax</h3>
           <p>Sit back , we'll do the dirty work.</p>
         </div>
-      </div>
+      </Row>
 
 
-    </div>
+    </Container>
   </section>
   <section className="colored-section" id="testimonials">
 

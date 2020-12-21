@@ -37,7 +37,7 @@ export default function  HomePage(){
        
       <Row>
         
-        <Col lg6>
+        <Col lg="6">
           <h1 className="big-sdf
           heading">Adapt to a new place easy peasy.</h1>
           <button type="button" onClick={() => {
@@ -48,7 +48,7 @@ export default function  HomePage(){
 
         </Col>
         
-        <Col lg6>
+        <Col lg="6">
           <img className="title-image" src="/locaft.png" alt="locaft-mockup" />
         </Col>
         

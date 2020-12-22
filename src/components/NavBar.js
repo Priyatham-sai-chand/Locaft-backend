@@ -47,7 +47,6 @@ export default function NavBar() {
 						</div>
 						<div class="dd_right">
 							<ul>
-								
 								<li>Settings</li>
 								<li>Logout</li>
 							</ul>

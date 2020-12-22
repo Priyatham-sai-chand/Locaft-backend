@@ -21,7 +21,7 @@ const FontIcon = styled(FontAwesomeIcon)`
 
 `;
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <WhiteSection>
             <ContainerPadded fluid>

@@ -6,8 +6,7 @@ import Footer from './Footer';
 
 import '../login_reg.css';
 
-class LogInContainer extends Component {
-  render() {
+const LogInContainer = (props) => {
     return (
         <BrowserRouter basename="user">
         <div className="Apper">
@@ -47,7 +46,7 @@ class LogInContainer extends Component {
         </BrowserRouter>
     );
   }
-}
+
 
 export default withRouter(LogInContainer);
 

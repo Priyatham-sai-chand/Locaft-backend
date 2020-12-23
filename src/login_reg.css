@@ -1,5 +1,4 @@
 .Apper {
-  height: 100vh;
   display: flex;
   color: white;
 }
@@ -42,13 +41,11 @@
   display:flex;
   align-content: flex-start;
   justify-content: flex-start;
-  margin-bottom: 120px;
   
 }
 
 .Apper__Aside__text {
   text-align: center;
-  margin-bottom: 40px; 
   
 }
 .Apper_quote{

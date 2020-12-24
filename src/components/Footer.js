@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram  } from "@fortawesome/free-brands-svg-icons";
 import  { faEnvelope }  from "@fortawesome/free-solid-svg-icons";
+import { Facebook,Twitter, Instagram } from "@styled-icons/fa-brands";
+import { Envelope } from "@styled-icons/fa-solid";
+
 import { 
     Container
 } from 'react-bootstrap';
@@ -16,19 +19,38 @@ const WhiteSection = styled.footer`
     background: ${ props => props.background || "white"};
 `;
 
-const FontIcon = styled(FontAwesomeIcon)`
-  margin: 20px 10px;
-
+const FacebookIcon = styled(Facebook)`
+    margin: 20px 10px;
+    width: 16px;
+    height: 16px;
 `;
+const TwitterIcon = styled(Twitter)`
+    margin: 20px 10px;
+    width: 16px;
+    height: 16px;
+`;
+const InstagramIcon = styled(Instagram)`
+    margin: 20px 10px;
+    width: 16px;
+    height: 16px;
+    color:#66bfbf;
+`;
+const EnvelopeIcon = styled(Envelope)`
+    margin: 20px 10px;
+    width: 16px;
+    height: 16px;
+`;
+
+
 
 const Footer = (props) => {
     return (
         <WhiteSection>
             <ContainerPadded fluid>
-                <FontIcon icon={faFacebook} />
-                <FontIcon icon={faTwitter} />
-                <FontIcon icon={faInstagram} />
-                <FontIcon icon={faEnvelope} />
+                <FacebookIcon />
+                <TwitterIcon />
+                <InstagramIcon />
+                <EnvelopeIcon />
                 
                 <p>© Copyright 2020 Locaft</p>
                 <p><a href="/tc">Terms and Conditions</a></p>

@@ -2,6 +2,7 @@ import React from 'react';
 import '../homepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar';
+import Footer from './Footer';
 import { useHistory } from "react-router-dom";
 import {
   Container,
@@ -12,6 +13,48 @@ import {
 
 } from "react-bootstrap";
 import styled from 'styled-components';
+import { Apple, GooglePlay } from '@styled-icons/fa-brands';
+import {CheckCircle,Heart,AddressCard,ChartLine } from '@styled-icons/fa-solid';
+import { Bullseye } from "@styled-icons/fa-solid";
+const IconApple = styled(Apple)`
+
+  width: 30px;
+  height: 30px;
+`;
+const IconGooglePlay = styled(GooglePlay)`
+  width: 26px;
+  height: 26px;
+`
+const IconCheckCircle = styled(CheckCircle)`
+  width: 50px;
+  height: 50px;
+  color: #66bfbf;
+`;
+const IconBullseye = styled(Bullseye)`
+  width: 50px;
+  height: 50px;
+  color: #66bfbf;
+
+`;
+const IconHeart = styled(Heart)`
+  width: 50px;
+  height: 50px;
+  color: #66bfbf;
+
+`;
+const IconAddressCard = styled(AddressCard)`
+  width: 50px;
+  height: 50px;
+  color: #66bfbf;
+
+
+`;
+const IconChartLine = styled(ChartLine)`
+  width: 50px;
+  height: 50px;
+  color: #66bfbf;
+
+`;
 
 const ITag = styled.i`
   
@@ -29,7 +72,11 @@ const BigHeading = styled.h1`
   font-size: 3.5rem;
   line-height: 1.5;
 `;
-
+const FeatureTitle = styled.h3`
+  font-size: 1.5rem;
+  color:#8f8f8f;
+          
+`;
 
 export default function HomePage() {
   const history = useHistory();
@@ -56,7 +103,7 @@ export default function HomePage() {
             </Col>
 
             <Col lg="6">
-              <img className="title-image" src="/locaft.png" alt="locaft-mockup" />
+              <img className="title-image" src="/locaft.jpg" alt="locaft-mockup" />
             </Col>
 
           </Row>
@@ -68,20 +115,20 @@ export default function HomePage() {
 
           <Row>
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-check-circle fa-4x"></i>
-              <h3 className="feature-title">Easy to use.</h3>
+              <IconCheckCircle />
+              <FeatureTitle>Easy to use.</FeatureTitle>
               <p>Get relocated.We'll take care of everything.</p>
             </div>
 
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-bullseye fa-4x"></i>
-              <h3 className="feature-title">Efficient</h3>
+              <IconBullseye />
+              <FeatureTitle>Efficient</FeatureTitle>
               <p>Get highest number of services for lowest cost possible.</p>
             </div>
 
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-heart fa-4x"></i>
-              <h3 className="feature-title">Relax</h3>
+              <IconHeart />
+              <FeatureTitle>Relax</FeatureTitle>
               <p>Sit back , we'll do the dirty work.</p>
             </div>
           </Row>
@@ -124,20 +171,20 @@ export default function HomePage() {
 
           <div className="row">
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-address-card fa-4x"></i>
-              <h2 className="feature-title">About Us</h2>
+              <IconAddressCard />
+              <FeatureTitle>About Us</FeatureTitle>
               <p>Adapting to a new place is always hard in any phase of life. We aim to make it easy. </p>
             </div>
 
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-bullseye fa-4x"></i>
-              <h2 className="feature-title">Vision</h2>
+              <IconBullseye />
+              <FeatureTitle>Vision</FeatureTitle>
               <p>Bringing all the basic amenities to the new place before your arrival.</p>
             </div>
 
             <div className="feature-box col-lg-4">
-              <i className="icon fas fa-chart-line fa-4x"></i>
-              <h2 className="feature-title">Mission</h2>
+              <IconChartLine />
+              <FeatureTitle>Mission</FeatureTitle>
               <p>Getting adapted and familiar to the new place made easy.</p>
             </div>
           </div>
@@ -151,29 +198,14 @@ export default function HomePage() {
         <div className="container-fluid">
 
           <h3 className="big-heading">Recommend us to your friends !</h3>
-          <button className="download-button btn btn-lg btn-dark" type="button"><i className="fab fa-apple"></i> Download</button>
-          <button className="download-button btn btn-lg brn-light" type="button"><i className="fab fa-google-play"></i> Download</button>
+          <button className="download-button btn btn-lg btn-dark" type="button"><IconApple /> Download</button>
+          &nbsp;
+          <button className="download-button btn btn-lg btn-dark" type="button"><IconGooglePlay /> Download</button>
         </div>
 
-        <div className="container-fluid">
-          <h2>Any comments ?</h2>
-          <p>Your comments are what help us improve.</p>
-
-        </div>
       </section>
 
-
-      <footer className="white-section" id="footer">
-        <div className="container-fluid">
-          <i className="social-icon fab fa-facebook-f"></i>
-          <i className="social-icon fab fa-twitter"></i>
-          <i className="social-icon fab fa-instagram"></i>
-          <i className="social-icon fas fa-envelope"></i>
-          <p>© Copyright 2020 Locaft</p>
-          <p><a href="/tc">Terms and Conditions</a></p>
-          <p><a href="/pp">Privacy Policy</a></p>
-        </div>
-      </ footer>
+      <Footer />
 
 
 

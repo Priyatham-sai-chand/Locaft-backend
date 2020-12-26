@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram  } from "@fortawesome/free-brands-svg-icons";
-import  { faEnvelope }  from "@fortawesome/free-solid-svg-icons";
 import { Facebook,Twitter, Instagram } from "@styled-icons/fa-brands";
 import { Envelope } from "@styled-icons/fa-solid";
 
@@ -33,7 +30,6 @@ const InstagramIcon = styled(Instagram)`
     margin: 20px 10px;
     width: 16px;
     height: 16px;
-    color:#66bfbf;
 `;
 const EnvelopeIcon = styled(Envelope)`
     margin: 20px 10px;

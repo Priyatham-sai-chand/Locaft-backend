@@ -56,25 +56,47 @@ const IconChartLine = styled(ChartLine)`
 
 `;
 
-const ITag = styled.i`
-  
+const ColoredSection = styled.section`  
+
+  background-color:#66bfbf;
+  color: #fff;
+
 
 `;
-const FeatureBox = styled.div`
+const WhiteSection = styled.section`
+  background:#fff;
+`;
+const PressSection = styled(ColoredSection)`
+  padding-bottom: 3%;
+
+`;
+const PressLogo = styled.img`
+  width: 18%;
+  height: 18%;
+  margin: 20px 20px 50px;
+`;
+
+
+const FeatureCol = styled(Col)`
   padding: 4.5%;
 
 `;
 const ContainerPadded = styled(Container)`
   padding: 7% 15%;
+  font-family: "Montserrat";
+  text-align: center;
+
 `;
 const BigHeading = styled.h1`
-  font-family: "Montserrat-Black";
   font-size: 3.5rem;
   line-height: 1.5;
+  font-family: "Montserrat-Bold";
+  color: white;
 `;
 const FeatureTitle = styled.h3`
   font-size: 1.5rem;
   color:#8f8f8f;
+  align-self: center;
           
 `;
 
@@ -86,13 +108,13 @@ export default function HomePage() {
     <div className="HomePage">
       < NavBar />
 
-      <section className="colored-section" id="title">
+      <ColoredSection>
 
         <ContainerPadded fluid>
 
           <Row>
 
-            <Col lg="6">
+            <FeatureCol lg="4">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
               <button type="button" onClick={() => {
                 history.push("/user/login")
@@ -100,42 +122,42 @@ export default function HomePage() {
 
               <button type="button" className="btn btn-info loginb" onClick={() => history.push("/user/register")} >Sign Up</button>
 
-            </Col>
+            </FeatureCol>
 
-            <Col lg="6">
+            <FeatureCol lg="6">
               <img className="title-image" src="/locaft.jpg" alt="locaft-mockup" />
-            </Col>
+            </FeatureCol>
 
           </Row>
         </ContainerPadded>
-      </section>
-      <section className="white-section" id="features">
+      </ColoredSection>
+      <WhiteSection>
 
         <Container fluid>
 
           <Row>
-            <div className="feature-box col-lg-4">
+            <FeatureCol lg="4">
               <IconCheckCircle />
               <FeatureTitle>Easy to use.</FeatureTitle>
               <p>Get relocated.We'll take care of everything.</p>
-            </div>
+            </FeatureCol>
 
-            <div className="feature-box col-lg-4">
+            <FeatureCol lg="4">
               <IconBullseye />
               <FeatureTitle>Efficient</FeatureTitle>
               <p>Get highest number of services for lowest cost possible.</p>
-            </div>
+            </FeatureCol>
 
-            <div className="feature-box col-lg-4">
+            <FeatureCol lg="4">
               <IconHeart />
               <FeatureTitle>Relax</FeatureTitle>
               <p>Sit back , we'll do the dirty work.</p>
-            </div>
+            </FeatureCol>
           </Row>
 
 
         </Container>
-      </section>
+      </WhiteSection>
       <section className="colored-section" id="testimonials">
 
         <div id="testimonial-carousel" className="carousel slide" data-ride="false">
@@ -158,52 +180,52 @@ export default function HomePage() {
         </div>
 
       </section>
-      <section className="colored-section" id="press">
-        <h3 className="big-heading">Our Partners</h3>
-        <img className="press-logo" src="/indigo.jpg" alt="indigo-logo" />
-        <img className="press-logo" src="/avasa.jpg" alt="avasa-logo" />
-        <img className="press-logo" src="/vrl.jpg" alt="vrl-logo" />
+      <PressSection>
+        <BigHeading>Our Partners</BigHeading>
+        <PressLogo src="/indigo.jpg" />
+        <PressLogo src="/avasa.jpg" />
+        <PressLogo src="/vrl.jpg" />
 
-      </section>
-      <section className="white-section" id="about-us">
+      </PressSection>
+      <WhiteSection>
 
-        <div className="container-fluid">
+        <ContainerPadded fluid>
 
-          <div className="row">
-            <div className="feature-box col-lg-4">
+          <Row>
+            <FeatureCol lg="4">
               <IconAddressCard />
               <FeatureTitle>About Us</FeatureTitle>
               <p>Adapting to a new place is always hard in any phase of life. We aim to make it easy. </p>
-            </div>
+            </FeatureCol>
 
-            <div className="feature-box col-lg-4">
+            <FeatureCol lg="4">
               <IconBullseye />
               <FeatureTitle>Vision</FeatureTitle>
               <p>Bringing all the basic amenities to the new place before your arrival.</p>
-            </div>
+            </FeatureCol>
 
-            <div className="feature-box col-lg-4">
+            <FeatureCol lg="4">
               <IconChartLine />
               <FeatureTitle>Mission</FeatureTitle>
               <p>Getting adapted and familiar to the new place made easy.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            </FeatureCol>
+          </Row>
+        </ContainerPadded>
+      </WhiteSection>
 
 
 
-      <section className="colored-section" id="cta">
+      <ColoredSection>
 
-        <div className="container-fluid">
+        <ContainerPadded fluid>
 
-          <h3 className="big-heading">Recommend us to your friends !</h3>
+          <BigHeading>Recommend us to your friends !</BigHeading>
           <button className="download-button btn btn-lg btn-dark" type="button"><IconApple /> Download</button>
           &nbsp;
           <button className="download-button btn btn-lg btn-dark" type="button"><IconGooglePlay /> Download</button>
-        </div>
+        </ContainerPadded>
 
-      </section>
+      </ColoredSection>
 
       <Footer />
 

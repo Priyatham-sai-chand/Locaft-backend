@@ -20,6 +20,12 @@ const UserSchema = mongoose.Schema({
         type:String,
         required:true,
         minlength: 5
+    },
+    pricing: {
+        type:String,
+        enum: ['free','basic','intermediate','luxury'],
+        default:'free',
+        required:false
     }
 
 });

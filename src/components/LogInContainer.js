@@ -20,7 +20,7 @@ const LogInContainer = (props) => {
 
             </div>
              <div className="Apper_Aside_image">
-                <img src="/skyscraper.png"></img>
+                <img src="/skyscraper.jpg"></img>
               </div>
           </div>
           <div className="Apper__Form">

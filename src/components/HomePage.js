@@ -14,17 +14,20 @@ import {
 } from "react-bootstrap";
 import styled from 'styled-components';
 import { Apple, GooglePlay } from '@styled-icons/fa-brands';
-import {CheckCircle,Heart,AddressCard,ChartLine } from '@styled-icons/fa-solid';
+import { CheckCircle, Heart, AddressCard, ChartLine } from '@styled-icons/fa-solid';
 import { Bullseye } from "@styled-icons/fa-solid";
-const IconApple = styled(Apple)`
+import { StyledIconBase } from '@styled-icons/styled-icon'
+const IconStyler = styled.div`
+  ${StyledIconBase} {
+    width: ${props => props.w ? props.w : 26}px;
+    height: ${props => props.height ? props.height : 26}px;
+    color: ${ props => props.color ? props.color: "white"};
 
-  width: 30px;
-  height: 30px;
+    
+  }
+
+
 `;
-const IconGooglePlay = styled(GooglePlay)`
-  width: 26px;
-  height: 26px;
-`
 const IconCheckCircle = styled(CheckCircle)`
   width: 50px;
   height: 50px;
@@ -68,6 +71,7 @@ const WhiteSection = styled.section`
 `;
 const PressSection = styled(ColoredSection)`
   padding-bottom: 3%;
+  align-items:center;
 
 `;
 const PressLogo = styled.img`
@@ -99,6 +103,11 @@ const FeatureTitle = styled.h3`
   align-self: center;
           
 `;
+const TestimonalTitle = styled.h2`
+  font-size: 3rem;
+  color:#fff;
+  line-height: 1.5;
+  `;
 
 export default function HomePage() {
   const history = useHistory();
@@ -106,7 +115,7 @@ export default function HomePage() {
   return (
 
     <div className="HomePage">
-      < NavBar />
+      <NavBar />
 
       <ColoredSection>
 
@@ -125,7 +134,7 @@ export default function HomePage() {
             </FeatureCol>
 
             <FeatureCol lg="6">
-              <img className="title-image" src="/locaft.jpg" alt="locaft-mockup" />
+              <img className="title-image" src="/locaft_optmized.jpg" alt="locaft-mockup" />
             </FeatureCol>
 
           </Row>
@@ -133,11 +142,11 @@ export default function HomePage() {
       </ColoredSection>
       <WhiteSection>
 
-        <Container fluid>
+        <ContainerPadded fluid>
 
           <Row>
             <FeatureCol lg="4">
-              <IconCheckCircle />
+              <IconStyler width={100} height= {100} color="#66bfbf"><CheckCircle /></IconStyler>
               <FeatureTitle>Easy to use.</FeatureTitle>
               <p>Get relocated.We'll take care of everything.</p>
             </FeatureCol>
@@ -156,36 +165,36 @@ export default function HomePage() {
           </Row>
 
 
-        </Container>
+        </ContainerPadded>
       </WhiteSection>
-      <section className="colored-section" id="testimonials">
+      <ColoredSection>
 
-        <div id="testimonial-carousel" className="carousel slide" data-ride="false">
-          <div className="carousel-inner">
-            <div className="carousel-item active container-fluid">
-              <h2 className="testimonial-text">I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</h2>
-              <em>Mani , Hyderabad</em>
-            </div>
-            <div className="carousel-item container-fluid">
-              <h2 className="testimonial-text">Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h2>
-              <em>Nishanth , Bangalore</em>
-            </div>
-          </div>
-          <a className="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon"></span>
-          </a>
-          <a className="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-            <span className="carousel-control-next-icon"></span>
-          </a>
-        </div>
+        <Carousel>
+          <Carousel.Item interval={1000}>
+            <Carousel.Caption>
+              <TestimonalTitle>I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</TestimonalTitle>
+              <p>Nishant, Pune</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item interval={1000}>
+            <Carousel.Caption>
+              <h3>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-      </section>
+        </Carousel>
+
+      </ColoredSection>
       <PressSection>
-        <BigHeading>Our Partners</BigHeading>
-        <PressLogo src="/indigo.jpg" />
-        <PressLogo src="/avasa.jpg" />
-        <PressLogo src="/vrl.jpg" />
+        <ContainerPadded fluid>
 
+          <BigHeading>Our Partners</BigHeading>
+          <PressLogo src="/indigo_optimized.jpg" alt="indigo-brand" />
+          <PressLogo src="/avasa_optmized.jpg" alt="avassa-brand" />
+          <PressLogo src="/vrl_optmized.jpg" alt="vrl-brand" />
+
+        </ContainerPadded>
       </PressSection>
       <WhiteSection>
 
@@ -220,9 +229,9 @@ export default function HomePage() {
         <ContainerPadded fluid>
 
           <BigHeading>Recommend us to your friends !</BigHeading>
-          <button className="download-button btn btn-lg btn-dark" type="button"><IconApple /> Download</button>
+          <button className="download-button btn btn-lg btn-dark" type="button"><IconStyler width={30} height={30}><Apple />Download</IconStyler></button>
           &nbsp;
-          <button className="download-button btn btn-lg btn-dark" type="button"><IconGooglePlay /> Download</button>
+          <button className="download-button btn btn-lg btn-dark" type="button"><IconStyler><GooglePlay /> Download</IconStyler></button>
         </ContainerPadded>
 
       </ColoredSection>

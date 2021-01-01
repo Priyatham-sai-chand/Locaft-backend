@@ -1,6 +1,7 @@
 .Apper {
   display: flex;
   color: white;
+  height:100vh;
 }
 
 .Apper__Aside {

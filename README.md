@@ -1,6 +1,14 @@
-## Locaft
+# Locaft
 
 It's a packing and movers and a conceriage service website.
+
+
+![auction](readme_image.JPG)
+
+![GitHub language count](https://img.shields.io/github/languages/count/Priyatham-sai-chand/Auction?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Priyatham-sai-chand/Auction?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Priyatham-sai-chand/Steganography-in-C?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Priyatham-sai-chand/Steganography-in-C?style=for-the-badge)
 
 ## Available Scripts
 

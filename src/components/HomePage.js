@@ -108,6 +108,10 @@ const TestimonalTitle = styled.h2`
   color:#fff;
   line-height: 1.5;
   `;
+const SkyScraper = styled.img`
+  width: 100vw;
+  height: 200px;
+`;
 
 export default function HomePage() {
   const history = useHistory();
@@ -173,17 +177,17 @@ export default function HomePage() {
       <ColoredSection>
 
         <Carousel>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item>
             <Carousel.Caption>
+            </Carousel.Caption>
               <TestimonalTitle>I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</TestimonalTitle>
               <p>Nishant, Pune</p>
-            </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item >
             <Carousel.Caption>
+            </Carousel.Caption>
               <h3>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
           </Carousel.Item>
 
         </Carousel>

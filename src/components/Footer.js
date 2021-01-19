@@ -9,13 +9,17 @@ import {
 
 const ContainerPadded = styled(Container)`
   padding: 7% 15%;
+  
 
 `;
 
 const WhiteSection = styled.footer`
     background: ${ props => props.background || "white"};
+    
 `;
-
+const ContainerCentered = styled.div`
+    text-align: center;
+`;
 const FacebookIcon = styled(Facebook)`
     margin: 20px 10px;
     width: 16px;
@@ -43,6 +47,7 @@ const Footer = (props) => {
     return (
         <WhiteSection>
             <ContainerPadded fluid>
+                <ContainerCentered>
                 <FacebookIcon />
                 <TwitterIcon />
                 <InstagramIcon />
@@ -51,7 +56,8 @@ const Footer = (props) => {
                 <p>© Copyright 2020 Locaft</p>
                 <p><a href="/tc">Terms and Conditions</a></p>
                 <p><a href="/pp">Privacy Policy</a></p>
-            </ContainerPadded>
+           </ContainerCentered> 
+           </ContainerPadded>
         </WhiteSection>
     )
 

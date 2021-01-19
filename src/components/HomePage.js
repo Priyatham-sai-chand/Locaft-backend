@@ -19,8 +19,8 @@ import { Bullseye } from "@styled-icons/fa-solid";
 import { StyledIconBase } from '@styled-icons/styled-icon'
 const IconStyler = styled.div`
   ${StyledIconBase} {
-    width: ${props => props.w ? props.w : 26}px;
-    height: ${props => props.height ? props.height : 26}px;
+    width: ${props => props.width ? props.width : 26}px;
+    height: ${props => props.height ? props.height : 26};
     color: ${ props => props.color ? props.color: "white"};
 
     
@@ -146,19 +146,22 @@ export default function HomePage() {
 
           <Row>
             <FeatureCol lg="4">
-              <IconStyler width={100} height= {100} color="#66bfbf"><CheckCircle /></IconStyler>
+              <IconStyler color="#66bfbf" width={50} height={50}><CheckCircle /></IconStyler>
+              <br/>
               <FeatureTitle>Easy to use.</FeatureTitle>
               <p>Get relocated.We'll take care of everything.</p>
             </FeatureCol>
 
             <FeatureCol lg="4">
-              <IconBullseye />
-              <FeatureTitle>Efficient</FeatureTitle>
+              <IconStyler color="#66bfbf" width={50} height={50}><Bullseye /></IconStyler>
+              <br />
+           <FeatureTitle>Efficient</FeatureTitle>
               <p>Get highest number of services for lowest cost possible.</p>
             </FeatureCol>
 
             <FeatureCol lg="4">
-              <IconHeart />
+              <IconStyler color="#66bfbf" width={50} height={50}><Heart /></IconStyler>
+              <br />
               <FeatureTitle>Relax</FeatureTitle>
               <p>Sit back , we'll do the dirty work.</p>
             </FeatureCol>

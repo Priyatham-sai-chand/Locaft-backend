@@ -1,6 +1,5 @@
 import React from 'react';
 import '../homepage.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { useHistory } from "react-router-dom";
@@ -17,6 +16,7 @@ import { Apple, GooglePlay } from '@styled-icons/fa-brands';
 import { CheckCircle, Heart, AddressCard, ChartLine } from '@styled-icons/fa-solid';
 import { Bullseye } from "@styled-icons/fa-solid";
 import { StyledIconBase } from '@styled-icons/styled-icon'
+
 const IconStyler = styled.div`
   ${StyledIconBase} {
     width: ${props => props.width ? props.width : 26}px;
@@ -26,36 +26,6 @@ const IconStyler = styled.div`
     
   }
 
-
-`;
-const IconCheckCircle = styled(CheckCircle)`
-  width: 50px;
-  height: 50px;
-  color: #66bfbf;
-`;
-const IconBullseye = styled(Bullseye)`
-  width: 50px;
-  height: 50px;
-  color: #66bfbf;
-
-`;
-const IconHeart = styled(Heart)`
-  width: 50px;
-  height: 50px;
-  color: #66bfbf;
-
-`;
-const IconAddressCard = styled(AddressCard)`
-  width: 50px;
-  height: 50px;
-  color: #66bfbf;
-
-
-`;
-const IconChartLine = styled(ChartLine)`
-  width: 50px;
-  height: 50px;
-  color: #66bfbf;
 
 `;
 
@@ -187,7 +157,7 @@ export default function HomePage() {
             <Carousel.Caption>
             </Carousel.Caption>
               <h3>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Mani, Hyderabad</p>
           </Carousel.Item>
 
         </Carousel>
@@ -209,19 +179,22 @@ export default function HomePage() {
 
           <Row>
             <FeatureCol lg="4">
-              <IconAddressCard />
+              <IconStyler color="#66bfbf" width={50} height={50}><AddressCard /></IconStyler>
+              <br />
               <FeatureTitle>About Us</FeatureTitle>
               <p>Adapting to a new place is always hard in any phase of life. We aim to make it easy. </p>
             </FeatureCol>
 
             <FeatureCol lg="4">
-              <IconBullseye />
+              <IconStyler color="#66bfbf" width={50} height={50}><Bullseye /></IconStyler>
+              <br />
               <FeatureTitle>Vision</FeatureTitle>
               <p>Bringing all the basic amenities to the new place before your arrival.</p>
             </FeatureCol>
 
             <FeatureCol lg="4">
-              <IconChartLine />
+              <IconStyler color="#66bfbf" width={50} height={50}><ChartLine /></IconStyler>
+              < br/>
               <FeatureTitle>Mission</FeatureTitle>
               <p>Getting adapted and familiar to the new place made easy.</p>
             </FeatureCol>

@@ -1,4 +1,4 @@
-import React, {  useState,useContext, useRef, useCallback } from 'react';
+import React, {  useState,useContext,useEffect } from 'react';
 import { Link } from "react-router-dom";
 import '../navbar.css';
 import UserContext from "../context/UserContext";
@@ -6,23 +6,25 @@ import styled,{ css } from 'styled-components';
 
 const Header = styled.header`
   background: #66bfbf;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   transition: 0.6s;
   padding: 10px 15px;
   z-index: 100000;
   font-family: Ubuntu;
 
-  ${ props => props.sticky && css`
-  padding: 3px 50px;
-  background: red;
+  ${ props => props.sticky ? css`
+  ${Header};
+  padding: 3px 45px;
+  min-height: 6vh;
   opacity: 0.85;
-  `}
+  display: fixed;
+  `:css``};
 
   
    & .logo {
@@ -49,23 +51,10 @@ const List = styled.ul`
 
 `;
 
-const RefCallback = () => {
 
-  const HeaderRef = useRef(null);
-  const setRef = useCallback(node => {
-    if(HeaderRef.current){
-
-    }
-    if( node ){
-      node.addEventListener()
-
-
-    }
-  })
-}
 export default function NavBar() {
   const { userData, setUserData } = useContext(UserContext);
-  const [ isSticky, setSticky ] = useState(false);
+  
   const logout = () => {
     setUserData({
       token: undefined,
@@ -75,17 +64,25 @@ export default function NavBar() {
   };
   
   
-    window.addEventListener("scroll", () => {
-      //header.classList.toggle("sticky", window.scrollY > 1);
-      if(window.scrollY > 1){
-        setSticky(isSticky => !isSticky);
-        console.log(isSticky);
-      }
-    });
+    const [scrolled,setScrolled]=React.useState(false);
+  const handleScroll=() => {
+    const offset=window.scrollY;
+    if(offset > 200 ){
+      setScrolled(true);
+    }
+    else{
+      setScrolled(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll',handleScroll)
+  })
+
+
   
   return (
     <div className="navbar">
-      <Header sticky = {isSticky} >
+      <Header sticky = {scrolled} >
         <input type="checkbox" id="check" />
         <label htmlFor="check" className="checkbtn">
           <i className="fas fa-bars" id="btn"></i>

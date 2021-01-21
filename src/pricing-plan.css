@@ -115,6 +115,7 @@
     letter-spacing: 0.02em;
     text-decoration: none !important;
     font-weight: bold;
+    text-align: center;
 }
 
 .pricing-plan__button:hover{

@@ -10,6 +10,7 @@ import {
 
 const ContainerPadded = styled(Container)`
   padding: 7% 15%;
+  text-align: center;
   
 
 `;
@@ -19,7 +20,10 @@ const WhiteSection = styled.footer`
     
 `;
 const ContainerCentered = styled.div`
-    text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+   
 `;
 const IconStyler = styled.div`
   ${StyledIconBase} {
@@ -62,19 +66,15 @@ const Footer = (props) => {
         <WhiteSection>
             <ContainerPadded fluid>
                 <ContainerCentered>
-                    <IconStyler color="#66bfbf" width={16} height={16}<Facebook /></IconStyler>
-                    <IconStyler color="#66bfbf" width={16} height={16}<Twitter /></IconStyler>
-                    <IconStyler color="#66bfbf" width={16} height={16}<Instagram /></IconStyler>
-                    <IconStyler color="#66bfbf" width={16} height={16}<Envelope /></IconStyler >
-                    <FacebookIcon />
-                    <TwitterIcon />
-                    <InstagramIcon />
-                    <EnvelopeIcon />
-
+                    <IconStyler color="#000" width={20} height={20}><Facebook /></IconStyler>
+                    <IconStyler color="#000" width={20} height={20}><Twitter /></IconStyler>
+                    <IconStyler color="#000" width={20} height={20}><Instagram /></IconStyler>
+                    <IconStyler color="#000" width={20} height={20}><Envelope /></IconStyler >
+                </ContainerCentered>
                     <p>© Copyright 2020 Locaft</p>
                     <p><a href="/tc">Terms and Conditions</a></p>
                     <p><a href="/pp">Privacy Policy</a></p>
-                </ContainerCentered >
+                
             </ContainerPadded >
         </WhiteSection >
     )

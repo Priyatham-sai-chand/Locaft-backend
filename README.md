@@ -1,9 +1,8 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Priyatham-sai-chand/Locaft)
 
 
 
 ![auction](public/locaft.jpg)
-
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Priyatham-sai-chand/Locaft)
 ![GitHub language count](https://img.shields.io/github/languages/count/Priyatham-sai-chand/Locaft?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Priyatham-sai-chand/Locaft?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/Priyatham-sai-chand/Locaft?style=for-the-badge)

@@ -3,6 +3,8 @@ import '../homepage.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { useHistory } from "react-router-dom";
+import Lottie from 'react-lottie';
+import animationData from '../lottie/plane_gif';
 import {
   Container,
   Row,
@@ -28,6 +30,14 @@ const IconStyler = styled.div`
 
 
 `;
+const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+    }; 
 
 const ColoredSection = styled.section`  
 
@@ -62,10 +72,12 @@ const ContainerPadded = styled(Container)`
 
 `;
 const BigHeading = styled.h1`
-  font-size: 3.5rem;
+  font-size: 5rem;
   line-height: 1.5;
-  font-family: "Montserrat-Bold";
+  font-family: "Ubuntu";
   color: white;
+  font-weight: bold;
+  
 `;
 const FeatureTitle = styled.h3`
   font-size: 1.5rem;
@@ -97,7 +109,7 @@ export default function HomePage() {
 
           <Row>
 
-            <FeatureCol lg="4">
+            <FeatureCol lg="6">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
               <button type="button" onClick={() => {
                 history.push("/user/login")
@@ -108,7 +120,8 @@ export default function HomePage() {
             </FeatureCol>
 
             <FeatureCol lg="6">
-              <img className="title-image" src="/locaft_optmized.jpg" alt="locaft-mockup" />
+              
+              <Lottie height={500} width={500} options= { defaultOptions } />
             </FeatureCol>
 
           </Row>

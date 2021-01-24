@@ -32,8 +32,6 @@ const FillingDetails = () => {
           <br></br>
           <Heading>Details</Heading>
           <br></br>
-          <h1></h1>
-          <h1></h1>
     <div>
         Source:&nbsp;&nbsp;    
       <Selector

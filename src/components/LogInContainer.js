@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, NavLink, Switch,withRouter } from 'react-router-dom';
 import Register from './Register';
 import Login from './Login';
@@ -12,7 +12,7 @@ const LogInContainer = (props) => {
         <div className="Apper">
           <div className="Apper__Aside">
             <div className="Apper_logo">
-            <img src="/logo.jpg"></img>
+            <img src="/logo.jpg" alt="plane logo"></img>
             </div>
             <div className="Apper__Aside__text">
               <h1 className="Apper_heading">locaft</h1>
@@ -20,7 +20,7 @@ const LogInContainer = (props) => {
 
             </div>
              <div className="Apper_Aside_image">
-                <img src="/skyscraper.jpg"></img>
+                <img src="/skyscraper.jpg" alt="skyscraper"></img>
               </div>
           </div>
           <div className="Apper__Form">

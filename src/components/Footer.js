@@ -38,30 +38,9 @@ const IconStyler = styled.div`
 
 `;
 
-const FacebookIcon = styled(Facebook)`
-    margin: 20px 10px;
-    width: 16px;
-    height: 16px;
-`;
-const TwitterIcon = styled(Twitter)`
-    margin: 20px 10px;
-    width: 16px;
-    height: 16px;
-`;
-const InstagramIcon = styled(Instagram)`
-    margin: 20px 10px;
-    width: 16px;
-    height: 16px;
-`;
-const EnvelopeIcon = styled(Envelope)`
-    margin: 20px 10px;
-    width: 16px;
-    height: 16px;
-`;
 
 
-
-const Footer = (props) => {
+const Footer = () => {
     return (
         <WhiteSection>
             <ContainerPadded fluid>

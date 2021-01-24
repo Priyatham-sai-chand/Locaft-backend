@@ -9,7 +9,6 @@ import {
   Container,
   Row,
   Col,
-  Button,
   Carousel,
 
 } from "react-bootstrap";
@@ -90,10 +89,7 @@ const TestimonalTitle = styled.h2`
   color:#fff;
   line-height: 1.5;
   `;
-const SkyScraper = styled.img`
-  width: 100vw;
-  height: 200px;
-`;
+
 
 export default function HomePage() {
   const history = useHistory();

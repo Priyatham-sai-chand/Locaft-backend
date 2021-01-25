@@ -8,7 +8,7 @@
 ![GitHub](https://img.shields.io/github/license/Priyatham-sai-chand/Locaft?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Priyatham-sai-chand/Locaft?style=for-the-badge)
 
-It's a packing and movers along with a conceriage service website.
+It's a packing and movers along with a concierge service website.
 To better connect both owners and tenants alike.
 It features a portal for both the parties to connect,communicate and choose the best deal.
 

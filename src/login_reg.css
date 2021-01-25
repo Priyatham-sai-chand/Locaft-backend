@@ -32,8 +32,7 @@
   font-family: "Ubuntu";
   font-size: 5rem;
   font-weight: bold;
-  position: relative;
-  color: white;
+  color: rgb(24, 14, 14);
   text-decoration: none;
   text-transform: lowercase;
 }

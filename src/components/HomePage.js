@@ -1,5 +1,4 @@
 import React from 'react';
-import '../homepage.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { useHistory } from "react-router-dom";

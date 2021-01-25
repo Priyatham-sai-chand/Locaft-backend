@@ -1,28 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import animationData from '../lottie/box_error';
 
 const Body = styled.div`
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
-background-color: #fff; 
-  
   font-size: 100%;
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
-
-
-
-
+  display:flex;
+  justify-content: center;
+  align-items: center;
 `;
-const Heading = styled.h1`
+const Container = styled.div`
+ 
+  position: relative;
+  background-color: #66bfbf;
   text-align: center;
-  color: #000;
+
 
   `;
+const Heading = styled.h1`
+  padding-top: 15%;
+  color: white;
+  font-size: 4rem;
+  
+ 
+  `;
+const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+    }; 
+
 const Error404 = () => {
   return (
    <Body>
-     <Heading>Error 404</Heading>
+     <Container>
+       <Heading>Error </Heading>
+       <br />
+       <Lottie height={500} width={500} options={defaultOptions} />
+       </Container>
 
     
       

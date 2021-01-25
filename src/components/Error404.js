@@ -25,6 +25,7 @@ const Heading = styled.h1`
   padding-top: 15%;
   color: white;
   font-size: 4rem;
+  margin: 0px;
   
  
   `;

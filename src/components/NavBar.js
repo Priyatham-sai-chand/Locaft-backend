@@ -96,28 +96,6 @@ export default function NavBar() {
           {userData.user ? (
             <React.Fragment>
             <li><Link onClick={logout}>{userData.user.username}</Link></li>
-            <li class="nr_li dd_main">
-					<img src="https://i.imgur.com/2QKIaJ5.png" alt="profile_img" />
-					
-					<div class="dd_menu">
-						<div class="dd_left">
-							<ul>
-								
-								<li><i class="fas fa-cog"></i></li>
-								<li><i class="fas fa-sign-out-alt"></i></li>
-							</ul>
-						</div>
-						<div class="dd_right">
-							<ul>
-								<li>Settings</li>
-								<li>Logout</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li class="nr_li">
-					<i class="fas fa-envelope-open-text"></i>
-				</li>
             </React.Fragment>
 
            

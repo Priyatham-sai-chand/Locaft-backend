@@ -106,11 +106,12 @@ export default function HomePage() {
 
             <FeatureCol lg="6">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
+            
               <button type="button" onClick={() => {
                 history.push("/user/login")
               }} className="btn btn-info login mr-1">Log In</button>
 
-              <button type="button" className="btn btn-info loginb" onClick={() => history.push("/user/register")} >Sign Up</button>
+              <button type="button" onClick={() => history.push("/user/register")} >Sign Up</button>
 
             </FeatureCol>
 

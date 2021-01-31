@@ -1,5 +1,5 @@
 import React, {  useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Axios from "axios";
 import { Link } from "react-router-dom";
@@ -30,7 +30,7 @@ import ErrorNotice from "./ErrorNotice";
         user: loginRes.data.user,
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/home");
+      history.push("/");
     } catch (err) {
       return err.response.data.msg && setError(err.response.data.msg);
     }
@@ -87,7 +87,7 @@ import ErrorNotice from "./ErrorNotice";
 
         <div className="FormField">
           <label className="FormField__CheckboxLabel">
-            <input className="FormField__Checkbox" type="checkbox" name="hasAgreed" /> I agree all statements in <a href="/" className="FormField__TermsLink">terms of service</a>
+            <input className="FormField__Checkbox" type="checkbox" name="hasAgreed" required="true" /> I agree all statements in <a href="/" className="FormField__TermsLink">terms of service</a>
           </label>
         </div>
 
@@ -99,4 +99,4 @@ import ErrorNotice from "./ErrorNotice";
   );
 }
 
-export default Register;
+export default withRouter( Register );

@@ -10,7 +10,7 @@ router.post("/register", async (req, res) => {
   try {
     let { username,email,phonenumber,password} = req.body;
 
-    // validate
+    
 
     if (!email || !password )
       return res.status(400).json({ msg: "Not all fields have been entered." });

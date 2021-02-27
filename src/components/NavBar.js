@@ -84,9 +84,7 @@ export default function NavBar() {
     <div className="navbar">
       <Header sticky = {scrolled} >
         <input type="checkbox" id="check" />
-        <label htmlFor="check" className="checkbtn">
-          <i className="fas fa-bars" id="btn"></i>
-        </label>
+       
         <a href="/" className="logo">locaft</a>
         <ul>
           <li><a href="/">Home</a></li>
@@ -97,8 +95,6 @@ export default function NavBar() {
             <React.Fragment>
             <li><Link onClick={logout}>{userData.user.username}</Link></li>
             </React.Fragment>
-
-           
             
           ) : (
               <React.Fragment>

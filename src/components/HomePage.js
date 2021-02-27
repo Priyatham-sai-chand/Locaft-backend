@@ -111,7 +111,7 @@ export default function HomePage() {
                 history.push("/user/login")
               }} className="btn btn-info login mr-1">Log In</button>
 
-              <button type="button" onClick={() => history.push("/user/register")} >Sign Up</button>
+              <button type="button"  className="btn btn-info login mr-1" onClick={() => history.push("/user/register")} >Sign Up</button>
 
             </FeatureCol>
 
@@ -154,19 +154,21 @@ export default function HomePage() {
         </ContainerPadded>
       </WhiteSection>
       <ColoredSection>
+      <br/>
+      <br/>
 
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
             </Carousel.Caption>
               <TestimonalTitle>I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</TestimonalTitle>
-              <p>Nishant, Pune</p>
+              <p style={{'text-align':'center'}}>Nishant, Pune</p>
           </Carousel.Item>
           <Carousel.Item >
             <Carousel.Caption>
             </Carousel.Caption>
-              <h3>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</h3>
-              <p>Mani, Hyderabad</p>
+              <TestimonalTitle>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</TestimonalTitle>
+              <p style={{'text-align': 'center'}}>Mani, Hyderabad</p>
           </Carousel.Item>
 
         </Carousel>

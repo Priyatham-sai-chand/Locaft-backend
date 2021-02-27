@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import animationData from '../lottie/box_error';

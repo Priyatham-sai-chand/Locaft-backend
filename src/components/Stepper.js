@@ -1,6 +1,7 @@
 import React  from 'react';
 import Footer from './Footer';
 import  '../stepper.css';
+import NavBar from './NavBar';
 
 export default function Stepper() {
 
@@ -11,7 +12,7 @@ export default function Stepper() {
     children = list.children,
     completed = 0;
 
-// simulate activating a node
+//  activating a node button
 next.addEventListener('click', function() {
     
     // count the number of completed nodes.
@@ -46,6 +47,7 @@ clear.addEventListener('click', function() {
 
   return (
     <div className="container">
+      < NavBar />
       <h1 className ="relocheading">Relocation Status</h1>
       <br />
       <br />

@@ -2,6 +2,80 @@ import React, { Component } from 'react';
 import '../pricing-plan.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import styles from 'styled-components';
+
+const WhiteContainer = styled.div`
+    background: white;
+
+`;
+const PricingPlanContainer = styled.div`
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+`;
+
+const PricingPlan = styled.section`
+
+    background: white;
+    width:300px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555555;
+    margin: 15px;
+
+    &:hover &:active {
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        transform: scale(1.05);
+
+
+    }
+`;
+const Text = styled.p`
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0 0 10px 0;
+`;
+const Currency = styled.p`
+
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    color:#000000;
+
+
+`;
+const Title = styled.h1`
+    font-size:1.5em;
+    font-weight: 400;
+`;
+
+
+const Header = styled.div`
+
+    padding:25px;
+    background: #009578;
+    color: #ffffff;
+
+`;
+
+const PricingPlan_SpecialText = styled.div`
+
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    background: #007c64;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2) inset;
+
+`;
+const 
+
 class PricingPlan extends Component {
 
     render(){
@@ -11,6 +85,7 @@ class PricingPlan extends Component {
                 <br />
                 <br />
                 <br />
+                    <h1 style={{'color':'#66bfbf','margin-left':'20px'}}>Pricing Plan</h1>
                 <div class='pricing-plan-container'>
 
                 <section class='pricing-plan '>
@@ -66,8 +141,8 @@ class PricingPlan extends Component {
                         <ul class='pricing-plan__list'>
                             <li class='pricing-plan__feature'>Feature #1</li>
                             <li class='pricing-plan__feature'>Feature #2</li>
-                            <li class='pricing-plan__feature'>Feature #3</li>
-                            <li class='pricing-plan__feature'>Feature #4</li>
+                            <li class='pricing-plan__feature'>Serv</li>
+                            <li class='pricing-plan__feature'>Feng shu consultancy free</li>
                         </ul>
                     </div>
                     < div class='pricing-plan__actions'>

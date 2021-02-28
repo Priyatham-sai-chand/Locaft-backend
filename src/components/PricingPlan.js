@@ -63,8 +63,13 @@ const Header = styled.div`
     color: #ffffff;
 
 `;
+const Summary = styled.h2`
 
-const PricingPlan_SpecialText = styled.div`
+    font-size: 1em;
+    font-weight: 300;
+    `;
+
+const  SpecialText = styled.div`
 
     padding: 10px;
     text-align: center;
@@ -72,9 +77,25 @@ const PricingPlan_SpecialText = styled.div`
     color: #ffffff;
     background: #007c64;
     box-shadow: 0 0 10px rgba(0,0,0,0.2) inset;
+    
+    &, ${Title}{
+    margin: 0;
+    text-align: center;
+    font-family: sans-serif;
+
+    }
 
 `;
-const 
+const Desc = styled.div`
+
+    padding: 25px;
+
+`; 
+const List = styled.ul `
+    padding: 0; 
+    margin: 0;
+    text-align: left;
+`;
 
 class PricingPlan extends Component {
 

@@ -21,33 +21,21 @@
 
 .pricing-plan__title,.pricing-plan__summary{
 
-    margin: 0;
-    text-align: center;
-    font-family: sans-serif;
 }
 
 .pricing-plan__title{
-
-    font-size: 1.5em;
-    font-weight: 400;
 
 }
 
 .pricing-plan__summary {
 
-    font-size: 1em;
-    font-weight:300;
 }
 
 .pricing-plan__desc {
-    padding:25px;
 }
 
 .pricing-plan__list {
 
-    padding: 0;
-    margin: 0;
-    text-align: left;
 }
 
 .pricing-plan__feature {

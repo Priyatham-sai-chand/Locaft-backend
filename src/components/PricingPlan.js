@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../pricing-plan.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import styles from 'styled-components';
+import styled from 'styled-components';
 
 const WhiteContainer = styled.div`
     background: white;
@@ -16,8 +15,7 @@ const PricingPlanContainer = styled.div`
     padding: 10px;
 `;
 
-const PricingPlan = styled.section`
-
+const Pricing = styled.section`
     background: white;
     width:300px;
     border-radius: 25px;
@@ -69,7 +67,7 @@ const Summary = styled.h2`
     font-weight: 300;
     `;
 
-const  SpecialText = styled.div`
+const SpecialText = styled.div`
 
     padding: 10px;
     text-align: center;
@@ -90,14 +88,13 @@ const Description = styled.div`
 
     padding: 25px;
 
-`; 
-const List = styled.ul `
+`;
+const List = styled.ul`
     padding: 0; 
     margin: 0;
     text-align: left;
 `;
 const Feature = styled.li`
-    list-style: none;
     margin: 0;
     padding-left: 25px;
     position: relative;
@@ -116,7 +113,7 @@ const Feature = styled.li`
     }
 
 `;
-const Actions =  styled.div`
+const Actions = styled.div`
 
     padding: 25px;
     border-top: 1px solid #eeeeee;
@@ -148,89 +145,91 @@ const Button = styled.a`
 
 
 `;
+
 class PricingPlan extends Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="body">
                 <NavBar />
                 <br />
                 <br />
                 <br />
-                    <h1 style={{'color':'#66bfbf','margin-left':'20px'}}>Pricing Plan</h1>
-                <WhiteContainer>
+                <h1 style={{ 'color': '#66bfbf', 'margin-left': '20px' }}>Pricing Plan</h1>
+                <PricingPlanContainer>
 
-                <PricingPlan>
-                    <Header>
-                        <Title>Basic Package</Title>
-                        <Summary>For those getting started</Summary>
+                    <Pricing>
+                        <Header>
+                            <Title>Basic Package</Title>
+                            <Summary>For those getting started</Summary>
 
-                    </Header>
-                    <Description>
-                        <ul class='pricing-plan__list'>
-                            <li class='pricing-plan__feature'>Feature #1</li>
-                            <li class='pricing-plan__feature'>Feature #2</li>
-                            <li class='pricing-plan__feature'>Feature #3</li>
-                            <li class='pricing-plan__feature'>Feature #4</li>
-                        </ul>
-                    </Description>
-                    < div class='pricing-plan__actions'>
-                        <p class='pricing-plan__cost'>$10</p>
-                        <p class='pricing-plan__text'>per month</p>
-                        <p class='pricing-plan__text'>Minimum spend over 12 months</p>
+                        </Header>
+                        <Description>
+                            <List>
+                                <Feature>Feature #1</Feature>
+                                <Feature>Feature #2</Feature>
+                                <Feature>Feature #3</Feature>
+                                <Feature>Feature #4</Feature>
+                            </List>
+                        </Description>
+                        <Actions>
+                            <Currency>$10</Currency>
+                            <Text>per month</Text>
+                            <Text>Minimum sped over 12 months</Text>
 
-                    </div>
-                </section>
-                <section class='pricing-plan pricing-plan--highlighted'>
-                    <div class='pricing-plan__special-text'>Recommended</div>
-                    <div class='pricing-plan__header'>
-                        <h1 class='pricing-plan__title'>Intermediate Package</h1>
-                        <h2 class='pricing-plan__summary'>For those getting started</h2>
+                        </Actions>
+                    </Pricing>
+                    <Pricing>
+                        <SpecialText>Recommended</SpecialText>
+                        <Header>
 
-                    </div>
-                    <div class='pricing-plan__desc'>
-                        <ul class='pricing-plan__list'>
-                            <li class='pricing-plan__feature'>Feature #1</li>
-                            <li class='pricing-plan__feature'>Feature #2</li>
-                            <li class='pricing-plan__feature'>Feature #3</li>
-                            <li class='pricing-plan__feature'>Feature #4</li>
-                        </ul>
-                    </div>
-                    < div class='pricing-plan__actions'>
-                        <p class='pricing-plan__cost'>$50</p>
-                        <p class='pricing-plan__text'>per month</p>
-                        <p class='pricing-plan__text'>Minimum spend over 12 months</p>
+                            <Title>Intermediate Package</Title>
+                            <Summary>For those getting started</Summary>
 
-                    </div>
-                </section>
-                <section class='pricing-plan '>
-                    <div class='pricing-plan__header'>
-                        <h1 class='pricing-plan__title'>Luxury Package</h1>
-                        <h2 class='pricing-plan__summary'>For those getting started</h2>
+                        </Header>
+                        <Description>
+                            <List>
+                                <Feature>Feature #1</Feature>
+                                <Feature>Feature #2</Feature>
+                                <Feature>Feature #3</Feature>
+                                <Feature>Feature #4</Feature>
+                            </List>
+                        </Description>
+                        <Actions>
+                            <Currency>$50</Currency>
+                            <Text>per month</Text>
+                            <Text>Minimum spend over 12 months</Text>
 
-                    </div>
-                    <div class='pricing-plan__desc'>
-                        <ul class='pricing-plan__list'>
-                            <li class='pricing-plan__feature'>Feature #1</li>
-                            <li class='pricing-plan__feature'>Feature #2</li>
-                            <li class='pricing-plan__feature'>Serv</li>
-                            <li class='pricing-plan__feature'>Feng shu consultancy free</li>
-                        </ul>
-                    </div>
-                    < div class='pricing-plan__actions'>
-                        <p class='pricing-plan__cost'>$100</p>
-                        <p class='pricing-plan__text'>per month</p>
-                        <p class='pricing-plan__text'>Minimum spend over 12 months</p>
+                        </Actions>
+                    </Pricing>
+                    <Pricing>
+                        <Header>
+                            <Title>Luxury Package</Title>
+                            <Summary>For those getting started</Summary>
 
-                    </div>
-                </section>
+                        </Header>
+                        <Description>
+                            <List>
+                                <Feature>Feature #1</Feature>
+                                <Feature>Feature #2</Feature>
+                                <Feature>Feature #3</Feature>
+                                <Feature>Feature #4</Feature>
+                            </List>
+                        </Description>
+                        <Actions>
+                            <Currency>$100</Currency>
+                            <Text>per month</Text>
+                            <Text>Minimum spend over 12 months</Text>
+
+                        </Actions>
+                    </Pricing>
 
 
-                </div>
-                        <a href='./' class='pricing-plan__button'>Purchase</a>
-                    <Footer />
+                </PricingPlanContainer>
+                <Button>Purchase</Button>
+                <Footer />
 
-                
+
 
             </div>
 

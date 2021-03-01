@@ -86,7 +86,7 @@ const  SpecialText = styled.div`
     }
 
 `;
-const Desc = styled.div`
+const Description = styled.div`
 
     padding: 25px;
 
@@ -96,7 +96,58 @@ const List = styled.ul `
     margin: 0;
     text-align: left;
 `;
+const Feature = styled.li`
+    list-style: none;
+    margin: 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.9em;
 
+    &:not(:last-child) {
+        margin-bottom: 2em; 
+    }
+
+    &::before {
+    content: "\2714";
+    color: #009578;
+    position: absolute;
+    left: 0;
+
+    }
+
+`;
+const Actions =  styled.div`
+
+    padding: 25px;
+    border-top: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+
+`;
+const Button = styled.a`
+
+    display: inline-block;
+    margin: 15px auto;
+    padding: 8px 20px;
+    color: #009578;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #009578;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-decoration: none !important;
+    font-weight: bold;
+    text-align: center;
+
+    &:hover {
+
+    background: #009578;
+    color: #ffffff;
+
+    }
+
+
+`;
 class PricingPlan extends Component {
 
     render(){
@@ -107,22 +158,22 @@ class PricingPlan extends Component {
                 <br />
                 <br />
                     <h1 style={{'color':'#66bfbf','margin-left':'20px'}}>Pricing Plan</h1>
-                <div class='pricing-plan-container'>
+                <WhiteContainer>
 
-                <section class='pricing-plan '>
-                    <div class='pricing-plan__header'>
-                        <h1 class='pricing-plan__title'>Basic Package</h1>
-                        <h2 class='pricing-plan__summary'>For those getting started</h2>
+                <PricingPlan>
+                    <Header>
+                        <Title>Basic Package</Title>
+                        <Summary>For those getting started</Summary>
 
-                    </div>
-                    <div class='pricing-plan__desc'>
+                    </Header>
+                    <Description>
                         <ul class='pricing-plan__list'>
                             <li class='pricing-plan__feature'>Feature #1</li>
                             <li class='pricing-plan__feature'>Feature #2</li>
                             <li class='pricing-plan__feature'>Feature #3</li>
                             <li class='pricing-plan__feature'>Feature #4</li>
                         </ul>
-                    </div>
+                    </Description>
                     < div class='pricing-plan__actions'>
                         <p class='pricing-plan__cost'>$10</p>
                         <p class='pricing-plan__text'>per month</p>

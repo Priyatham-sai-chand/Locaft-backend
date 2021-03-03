@@ -13,6 +13,10 @@ const PricingPlanContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 10px;
+    flex-direction: row;
+
+    
+    
 `;
 
 const Pricing = styled.section`
@@ -48,6 +52,7 @@ const Currency = styled.p`
 
 
 `;
+
 const Title = styled.h1`
     font-size:1.5em;
     font-weight: 400;
@@ -85,7 +90,7 @@ const SpecialText = styled.div`
 
 `;
 const Description = styled.div`
-
+    display:block;
     padding: 25px;
 
 `;
@@ -95,20 +100,17 @@ const List = styled.ul`
     text-align: left;
 `;
 const Feature = styled.li`
-    margin: 0;
+    margin: 0 0 25px 0;
     padding-left: 25px;
     position: relative;
-    font-size: 0.9em;
-
+    font-size: 0.9 em;
     &:not(:last-child) {
         margin-bottom: 2em; 
     }
 
     &::before {
-    content: "\2714";
-    color: #009578;
-    position: absolute;
-    left: 0;
+    content: "✓ ";
+    color: green;
 
     }
 
@@ -132,14 +134,13 @@ const Button = styled.a`
     border: 1px solid #009578;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    text-decoration: none !important;
     font-weight: bold;
     text-align: center;
 
     &:hover {
 
     background: #009578;
-    color: #ffffff;
+    color: white !important;
 
     }
 
@@ -226,7 +227,9 @@ class PricingPlan extends Component {
 
 
                 </PricingPlanContainer>
+                <PricingPlanContainer>
                 <Button>Purchase</Button>
+                </PricingPlanContainer>
                 <Footer />
 
 

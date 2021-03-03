@@ -55,12 +55,11 @@
   font-size: 1.25em;
   font-style:italic;
 }
-.Apper__Aside_image img{
+.Apper__Aside_image{
   margin-top: 600px;
-  width: 900px;
-  
-  
-  
+  width: 100%;
+
+  background-size: 100%;
 }
 
 .PageSwitcher__Item {

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { find } from 'styled-components/test-utils'
 
 const Image = styled.img`
     display:block;
@@ -13,7 +12,6 @@ const Tick = styled.input.attrs(props => ({
     
 `;
 const Overlay = styled.div`
-
   position: block;
   bottom: 0;
   background: rgb(0, 0, 0);
@@ -34,7 +32,7 @@ const Card = styled.div`
   width: 300px;
   height: 300px;
   border-radius: 40px;
-box-shadow: 4px 4px 5px 5px rgba(0,0,0,0.01), -2px -2px 5px 5px rgba(0,0,0,0.22);
+  box-shadow: 4px 4px 5px 5px rgba(0,0,0,0.01), -2px -2px 5px 5px rgba(0,0,0,0.22);
   cursor: pointer;
   transition: 0.4s;
   
@@ -80,7 +78,6 @@ box-shadow: 4px 4px 5px 5px rgba(0,0,0,0.01), -2px -2px 5px 5px rgba(0,0,0,0.22)
     height: 40px;
     color: white;
 }
-
 &:hover {
 
 box-shadow: 2px 2px 5px 9px rgba(0,0,0,0.22), -2px -2px 5px 5px rgba(0,0,0,0.11);
@@ -96,9 +93,6 @@ box-shadow: 2px 2px 5px 9px rgba(0,0,0,0.22), -2px -2px 5px 5px rgba(0,0,0,0.11)
 
 
 const HouseCard = (props) => {
-
-    
-
 
     return (
         
@@ -116,5 +110,4 @@ const HouseCard = (props) => {
 
 
 }
-
 export default HouseCard;

@@ -10,7 +10,6 @@ import Stepper from './components/Stepper';
 import NavBar from "./components/NavBar";
 import FillingDetails from "./components/FillingDetails";
 import Error404 from './components/Error404';
-
 export default function App() {
   const [userData, setUserData ] = useState({
     token: undefined,

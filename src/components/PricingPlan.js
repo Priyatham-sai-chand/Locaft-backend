@@ -2,7 +2,25 @@ import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import styled from 'styled-components';
-
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+export const Device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};
 const WhiteContainer = styled.div`
     background: white;
 
@@ -13,7 +31,11 @@ const PricingPlanContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 10px;
-    flex-direction: row;
+    flex-direction: column;
+
+    @media ${Device.laptop} {
+        flex-direction: row;
+    }
 
     
     
@@ -31,7 +53,7 @@ const Pricing = styled.section`
     color: #555555;
     margin: 15px;
 
-    &:hover &:active {
+    &:hover {
         box-shadow: 0 0 15px rgba(0,0,0,0.4);
         transform: scale(1.05);
 

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { useState,Component } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import styled from 'styled-components';
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -21,10 +22,6 @@ export const Device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`
 };
-const WhiteContainer = styled.div`
-    background: white;
-
-`;
 const PricingPlanContainer = styled.div`
 
     display:flex;
@@ -56,9 +53,20 @@ const Pricing = styled.section`
     &:hover {
         box-shadow: 0 0 15px rgba(0,0,0,0.4);
         transform: scale(1.05);
+        cursor: pointer;
 
 
     }
+`;
+const Radio = styled.input`
+    display:none;
+
+`;
+const Label = styled.label`
+    display: relative;
+    cursor:pointer;
+
+
 `;
 const Text = styled.p`
     font-size: 0.9em;
@@ -169,19 +177,23 @@ const Button = styled.a`
 
 `;
 
-class PricingPlan extends Component {
+const PricingPlan = () => {
+const [pricing, setPricing] = useState();
 
-    render() {
         return (
             <div className="body">
+                
                 <NavBar />
                 <br />
                 <br />
                 <br />
                 <h1 style={{ 'color': '#66bfbf', 'margin-left': '20px' }}>Pricing Plan</h1>
-                <PricingPlanContainer>
+                {pricing}
+                <PricingPlanContainer onChange={event => setPricing(event.target.value)}>
 
                     <Pricing>
+                        <Radio type ="radio" value="basic" name="pricing" id = "basic"/>
+                        <Label for="basic">
                         <Header>
                             <Title>Basic Package</Title>
                             <Summary>For those getting started</Summary>
@@ -201,8 +213,11 @@ class PricingPlan extends Component {
                             <Text>Minimum sped over 12 months</Text>
 
                         </Actions>
+                        </Label>
                     </Pricing>
                     <Pricing>
+                        <Radio type="radio" value="intermediate" name="pricing" id="intermediate" />
+                        <Label for="intermediate" >
                         <SpecialText>Recommended</SpecialText>
                         <Header>
 
@@ -224,8 +239,11 @@ class PricingPlan extends Component {
                             <Text>Minimum spend over 12 months</Text>
 
                         </Actions>
+                        </Label>
                     </Pricing>
                     <Pricing>
+                        <Radio type="radio" value="luxury" name="pricing" id="luxury" />
+                        <Label for="luxury">
                         <Header>
                             <Title>Luxury Package</Title>
                             <Summary>For those getting started</Summary>
@@ -245,6 +263,8 @@ class PricingPlan extends Component {
                             <Text>Minimum spend over 12 months</Text>
 
                         </Actions>
+                        </Label>
+
                     </Pricing>
 
 
@@ -259,7 +279,7 @@ class PricingPlan extends Component {
             </div>
 
         )
-    }
+    
 
 }
 export default PricingPlan;

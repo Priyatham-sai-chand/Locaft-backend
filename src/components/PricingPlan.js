@@ -1,7 +1,7 @@
 import React, { useState,Component } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import styled from 'styled-components';
+import styled,{css} from 'styled-components';
 
 const size = {
   mobileS: '320px',
@@ -34,30 +34,11 @@ const PricingPlanContainer = styled.div`
         flex-direction: row;
     }
 
+
     
     
 `;
 
-const Pricing = styled.section`
-    background: white;
-    width:300px;
-    border-radius: 25px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    overflow: hidden;
-    font-family: sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #555555;
-    margin: 15px;
-
-    &:hover {
-        box-shadow: 0 0 15px rgba(0,0,0,0.4);
-        transform: scale(1.05);
-        cursor: pointer;
-
-
-    }
-`;
 const Radio = styled.input`
     display:none;
 
@@ -68,6 +49,34 @@ const Label = styled.label`
 
 
 `;
+const Pricing = styled.section`
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555555;
+    margin: 15px;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        transform: scale(1.05);
+
+
+    }
+    ${props => props.pricing_id == props.pricing_plan ? css`
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        transform: scale(1.05);
+
+    
+    `:css``};
+    
+     
+`;
+
 const Text = styled.p`
     font-size: 0.9em;
     text-align: center;
@@ -191,7 +200,7 @@ const [pricing, setPricing] = useState();
                 {pricing}
                 <PricingPlanContainer onChange={event => setPricing(event.target.value)}>
 
-                    <Pricing>
+                    <Pricing pricing_plan={pricing} pricing_id="basic">
                         <Radio type ="radio" value="basic" name="pricing" id = "basic"/>
                         <Label for="basic">
                         <Header>
@@ -215,7 +224,7 @@ const [pricing, setPricing] = useState();
                         </Actions>
                         </Label>
                     </Pricing>
-                    <Pricing>
+                    <Pricing pricing_plan={pricing} pricing_id="intermediate">
                         <Radio type="radio" value="intermediate" name="pricing" id="intermediate" />
                         <Label for="intermediate" >
                         <SpecialText>Recommended</SpecialText>
@@ -241,7 +250,7 @@ const [pricing, setPricing] = useState();
                         </Actions>
                         </Label>
                     </Pricing>
-                    <Pricing>
+                    <Pricing pricing_plan={pricing} pricing_id="luxury">
                         <Radio type="radio" value="luxury" name="pricing" id="luxury" />
                         <Label for="luxury">
                         <Header>

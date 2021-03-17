@@ -5,6 +5,8 @@ import UserContext from "../context/UserContext";
 import styled,{ css } from 'styled-components';
 
 const Header = styled.header`
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
   background: #66bfbf;
   position: fixed;
   top: 0;
@@ -40,11 +42,34 @@ const Header = styled.header`
 
    }
 `;
+const ListElement = styled.li`
+
+`;
+const Anchor = styled.a`
+
+
+`;
 const List = styled.ul`
   ${Header};
-  & li {
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & ${ListElement} {
   position: relative;
   list-style:none;
+
+  }
+  & ${ListElement} ${Anchor} {
+    position: relative;
+    margin: 5px 15px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    padding: 3px 0;
+    transition: 0.6s;
 
   }
   
@@ -83,7 +108,6 @@ export default function NavBar() {
   return (
     <div className="navbar">
       <Header sticky = {scrolled} >
-        <input type="checkbox" id="check" />
        
         <a href="/" className="logo">locaft</a>
         <ul>

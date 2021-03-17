@@ -67,7 +67,7 @@ const Pricing = styled.section`
 
 
     }
-    ${props => props.pricing_id == props.pricing_plan ? css`
+    ${props => props.pricing_id === props.pricing_plan ? css`
         box-shadow: 0 0 15px rgba(0,0,0,0.4);
         transform: scale(1.05);
 

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
 * {
 
   box-sizing: border-box;
@@ -68,7 +67,7 @@ header ul li a  {
 
 
 }
-header ul li a button:before{
+header ul li a {
   position: absolute;
   content: '';
   left:0;

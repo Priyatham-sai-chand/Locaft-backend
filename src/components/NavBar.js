@@ -1,6 +1,5 @@
 import React, {useContext,useEffect } from 'react';
 import { Link } from "react-router-dom";
-import '../navbar.css';
 import UserContext from "../context/UserContext";
 import styled,{ css } from 'styled-components';
 
@@ -23,7 +22,7 @@ const Header = styled.header`
   ${ props => props.sticky ? css`
   ${Header};
   padding: 3px 45px;
-  min-height: 6vh;
+  min-height: 3vh;
   opacity: 0.85;
   display: fixed;
   `:css``};
@@ -37,42 +36,53 @@ const Header = styled.header`
   color: #fff;
   text-decoration: none;
   text-transform: lowercase;
-  padding-left: 100px;
   transition: 0.6s;
 
    }
 `;
-const ListElement = styled.li`
-
-`;
-const Anchor = styled.a`
-
-
-`;
 const List = styled.ul`
-  ${Header};
 
   position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  & ${ListElement} {
-  position: relative;
-  list-style:none;
+  padding: 13px 50px;
+  flex-wrap: nowrap;
+  margin-bottom: 0px !important;
 
-  }
-  & ${ListElement} ${Anchor} {
-    position: relative;
-    margin: 5px 15px;
-    text-transform: uppercase;
+`;
+const ListElement = styled.li`
+	color: #fff;
+    text-decoration: none;
+    text-transfrom: uppercase;
+
+	position:relative;
+	padding:3px 50px;
+`;
+
+const Anchor = styled.a`
     color: #fff;
+    text-transform: uppercase;
+    color: inherit;
     letter-spacing: 2px;
-    font-weight: 500px;
+    font-size: 1.2em;
+    padding: 3px ;
+    transition: 0.6s;
+    white-space: nowrap;
+
+
+
+    
+`;
+const Linker = styled(Link)`
+	color:#fff;
+    text-transform: uppercase;
+    color: inherit;
+    letter-spacing: 2px;
+    font-size: 1.2em;
     padding: 3px 0;
     transition: 0.6s;
-
-  }
-  
 
 `;
 
@@ -109,24 +119,24 @@ export default function NavBar() {
     <div className="navbar">
       <Header sticky = {scrolled} >
        
-        <a href="/" className="logo">locaft</a>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#about-us">About</a></li>
-          <li><a href="/#features">Services</a></li>
-          <li><a href="/#footer">Contact us</a></li>
+        <Anchor href="/" className="logo">locaft</Anchor>
+        <List>
+          <ListElement><Anchor href="/">Home</Anchor></ListElement>
+          <ListElement><Anchor href="/#about-us">About</Anchor></ListElement>
+          <ListElement><Anchor href="/#features">Services</Anchor></ListElement>
+          <ListElement><Anchor href="/#footer">Contact us</Anchor></ListElement>
           {userData.user ? (
             <React.Fragment>
-            <li><Link onClick={logout}>{userData.user.username}</Link></li>
+            <ListElement><Link onCListElementck={logout}>{userData.user.username}</Link></ListElement>
             </React.Fragment>
             
           ) : (
               <React.Fragment>
-              <li><Link to="/user/register">Register</Link></li>
-              <li><Link  to="/user/login">login</Link></li>
+              <ListElement><Linker  to="/user/register">Register</Linker></ListElement>
+              <ListElement><Linker to="/user/login">login</Linker></ListElement>
               </React.Fragment>
             )}
-        </ul>
+        </List>
 
       </Header>
     </div>

@@ -31,3 +31,4 @@ mongoose.connect(
 // set up routes
 
 app.use("/users", require("./routes/users"));
+app.get('/', (req, res) => { res.send('Hello from Express!')};

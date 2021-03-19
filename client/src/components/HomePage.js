@@ -4,15 +4,8 @@ import Footer from './Footer';
 import { useHistory } from "react-router-dom";
 import Lottie from 'react-lottie';
 import animationData from '../lottie/plane_gif';
-import {
-  Container,
-  Row,
-  Col,
-  Carousel,
-
-} from "react-bootstrap";
+import {Container,Row,Col,Carousel, Button} from "react-bootstrap";
 import styled from 'styled-components';
-import { Apple, GooglePlay } from '@styled-icons/fa-brands';
 import { CheckCircle, Heart, AddressCard, ChartLine } from '@styled-icons/fa-solid';
 import { Bullseye } from "@styled-icons/fa-solid";
 import { StyledIconBase } from '@styled-icons/styled-icon'
@@ -64,8 +57,7 @@ const FeatureCol = styled(Col)`
 
 `;
 const ContainerPadded = styled(Container)`
-  padding: 7% 15%;
-  font-family: "Montserrat";
+  padding: 5% 5%;
   text-align: center;
 
 `;
@@ -87,6 +79,8 @@ const TestimonalTitle = styled.h2`
   font-size: 3rem;
   color:#fff;
   line-height: 1.5;
+  align-content: center;
+  padding: 10px 50px;
   `;
 
 
@@ -98,7 +92,7 @@ export default function HomePage() {
     <div className="HomePage">
       <NavBar />
 
-      <ColoredSection>
+      <ColoredSection height="100vh" width="100vw">
 
         <ContainerPadded fluid>
 
@@ -107,11 +101,11 @@ export default function HomePage() {
             <FeatureCol lg="6">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
             
-              <button type="button" onClick={() => {
+              <Button variant="info" onClick={() => {
                 history.push("/user/login")
-              }} className="btn btn-info login mr-1">Log In</button>
+              }} >Log In</Button> &nbsp;
 
-              <button type="button"  className="btn btn-info login mr-1" onClick={() => history.push("/user/register")} >Sign Up</button>
+              <Button variant="info" onClick={() => history.push("/user/register")} >Sign Up</Button>
 
             </FeatureCol>
 
@@ -123,7 +117,7 @@ export default function HomePage() {
           </Row>
         </ContainerPadded>
       </ColoredSection>
-      <WhiteSection>
+      <WhiteSection id="services">
 
         <ContainerPadded fluid>
 
@@ -184,7 +178,7 @@ export default function HomePage() {
 
         </ContainerPadded>
       </PressSection>
-      <WhiteSection>
+      <WhiteSection id="about-us">
 
         <ContainerPadded fluid>
 
@@ -220,14 +214,16 @@ export default function HomePage() {
         <ContainerPadded fluid>
 
           <BigHeading>Recommend us to your friends !</BigHeading>
-          <button className="download-button btn btn-lg btn-dark" type="button"><IconStyler width={30} height={30}><Apple />Download</IconStyler></button>
+          <img width="200px" src="google-play-badge.png"></img>
           &nbsp;
-          <button className="download-button btn btn-lg btn-dark" type="button"><IconStyler><GooglePlay /> Download</IconStyler></button>
+          <img width="160px" src="apple_badge.svg" ></img>
         </ContainerPadded>
 
       </ColoredSection>
 
-      <Footer />
+      <div id="footer">
+        <Footer />
+      </div>
 
 
 

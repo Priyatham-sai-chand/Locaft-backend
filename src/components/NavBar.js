@@ -55,7 +55,7 @@ const List = styled.ul`
 const ListElement = styled.li`
 	color: #fff;
     text-decoration: none;
-    text-transfrom: uppercase;
+    text-transform: uppercase;
 
 	position:relative;
 	padding:3px 50px;
@@ -123,7 +123,7 @@ export default function NavBar() {
         <List>
           <ListElement><Anchor href="/">Home</Anchor></ListElement>
           <ListElement><Anchor href="/#about-us">About</Anchor></ListElement>
-          <ListElement><Anchor href="/#features">Services</Anchor></ListElement>
+          <ListElement><Anchor href="/#services">Services</Anchor></ListElement>
           <ListElement><Anchor href="/#footer">Contact us</Anchor></ListElement>
           {userData.user ? (
             <React.Fragment>

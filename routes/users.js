@@ -109,5 +109,28 @@ router.get("/", auth, async (req, res) => {
     id: user._id,
   });
 });
+router.put("/update", async (req, res) => {
+  const { email,pricing } = req.body;
+  const existingUser = await User.findOne({ email: email });
+  
+  
+  if (!existingUser) {
+    return res.status(400).json({ Msg: "Not all fields have been entered." });
+
+  }
+
+  User.findByIdAndUpdate({ _id: existingUser._id }, { pricing: pricing }).then(() => {
+    User.findOne({ email: email }).then((user) => {
+      res.send(user);
+    })
+  })
+    
+  
+  
+  
+  
+  
+
+})
 
 module.exports = router;

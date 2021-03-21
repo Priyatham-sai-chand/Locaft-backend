@@ -81,6 +81,7 @@ const TestimonalTitle = styled.h2`
   line-height: 1.5;
   align-content: center;
   padding: 10px 50px;
+  font-style: italic;
   `;
 
 
@@ -92,7 +93,7 @@ export default function HomePage() {
     <div className="HomePage">
       <NavBar />
 
-      <ColoredSection height="100vh" width="100vw">
+      <ColoredSection >
 
         <ContainerPadded fluid>
 
@@ -155,13 +156,13 @@ export default function HomePage() {
           <Carousel.Item>
             <Carousel.Caption>
             </Carousel.Caption>
-              <TestimonalTitle>I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place.</TestimonalTitle>
+              <TestimonalTitle>"I had to shift from Bangalore to Hyderabad. Thanks to Locaft , it was easy to know about this place."</TestimonalTitle>
               <p style={{'text-align':'center'}}>Nishant, Pune</p>
           </Carousel.Item>
           <Carousel.Item >
             <Carousel.Caption>
             </Carousel.Caption>
-              <TestimonalTitle>Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days.</TestimonalTitle>
+              <TestimonalTitle>"Relocation took me 3 months previously , but thanks to Locaft , everything was done within 3 days."</TestimonalTitle>
               <p style={{'text-align': 'center'}}>Mani, Hyderabad</p>
           </Carousel.Item>
 

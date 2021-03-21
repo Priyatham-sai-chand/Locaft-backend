@@ -127,7 +127,7 @@ export default function NavBar() {
           <ListElement><Anchor href="/#footer">Contact us</Anchor></ListElement>
           {userData.user ? (
             <React.Fragment>
-            <ListElement><Link onCListElementck={logout}>{userData.user.username}</Link></ListElement>
+            <ListElement><Linker onClick={logout}>{userData.user.username}</Linker></ListElement>
             </React.Fragment>
             
           ) : (

@@ -1,7 +1,8 @@
-import React, { useState,Component } from 'react';
+import React, { useState,Component,useContext } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import styled,{css} from 'styled-components';
+import UserContext from "../context/UserContext";
 
 const size = {
   mobileS: '320px',
@@ -187,6 +188,7 @@ const Button = styled.a`
 `;
 
 const PricingPlan = () => {
+const { userData, setUserData } = useContext(UserContext);
 const [pricing, setPricing] = useState();
 
         return (

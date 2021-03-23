@@ -10,6 +10,7 @@ import Stepper from './components/Stepper';
 import NavBar from "./components/NavBar";
 import FillingDetails from "./components/FillingDetails";
 import Error404 from './components/Error404';
+import Payment from './components/Payment'
 export default function App() {
   const [userData, setUserData ] = useState({
     token: undefined,
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/track" component={Stepper} />
             <Route path="/options" component={Options} />
             <Route path="/details" component={FillingDetails} />
+            <Route path="/payment" component={Payment} />
             <Route path="/" component={Error404} />
           </Switch>
           </UserContext.Provider>

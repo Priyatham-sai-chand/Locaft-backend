@@ -1,8 +1,11 @@
-import React, { useState,Component,useContext } from 'react';
+import React, { useState,useContext } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import styled,{css} from 'styled-components';
 import UserContext from "../context/UserContext";
+import Payment from "./Payment";
+import { useHistory } from "react-router-dom";
+import Axios from 'axios';
 
 const size = {
   mobileS: '320px',
@@ -176,6 +179,7 @@ const Button = styled.a`
     letter-spacing: 0.02em;
     font-weight: bold;
     text-align: center;
+    cursor: pointer;
 
     &:hover {
 
@@ -187,19 +191,44 @@ const Button = styled.a`
 
 `;
 
+const Heading = styled.h1`
+    color: #66bfbf;
+    margin-left: 20px;
+    margin-top: 100px;
+
+
+`;
+
 const PricingPlan = () => {
-const { userData, setUserData } = useContext(UserContext);
-const [pricing, setPricing] = useState();
+
+    const { userData, setUserData } = useContext(UserContext);
+const [ purchased, setPurchased ] = useState(false);
+    const [ pricing, setPricing ] = useState();
+
+  const history = useHistory();
+const submit = async (props) => {
+    props.preventDefault();
+    try {
+        const pricingRes = await Axios.put(
+            "http://localhost:5000/users/update", {
+                userData.user.email,
+                pricing
+            }
+        
+        );
+    } catch (err) {
+        console.log(err);
+
+    }
+}
 
         return (
             <div className="body">
-                
                 <NavBar />
-                <br />
-                <br />
-                <br />
-                <h1 style={{ 'color': '#66bfbf', 'margin-left': '20px' }}>Pricing Plan</h1>
-                {pricing}
+               { !purchased ? (
+                
+               <React.Fragment>
+                <Heading>Pricing Plan</Heading>
                 <PricingPlanContainer onChange={event => setPricing(event.target.value)}>
 
                     <Pricing pricing_plan={pricing} pricing_id="basic">
@@ -281,8 +310,18 @@ const [pricing, setPricing] = useState();
 
                 </PricingPlanContainer>
                 <PricingPlanContainer>
-                <Button>Purchase</Button>
+                            <Button onClick={() =>  setPurchased(true) }>Purchase</Button>
                 </PricingPlanContainer>
+                </React.Fragment>
+             ): (
+                 <React.Fragment>
+                            <Heading>user name: {userData.user.username}</Heading>
+                <h1>Plan selected : {pricing}</h1>
+
+                <Button onClick={submit}>Confirm and Pay</Button>
+                </React.Fragment>
+             )
+             }
                 <Footer />
 
 

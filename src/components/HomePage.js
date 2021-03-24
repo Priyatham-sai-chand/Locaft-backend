@@ -214,7 +214,7 @@ export default function HomePage() {
 
         <ContainerPadded fluid>
           <Row>
-            <FeatureCol lg="6">
+            <FeatureCol lg="4">
 
           <BigHeading>Recommend us to your friends !</BigHeading>
           <img width="200px" src="google-play-badge.png"></img>

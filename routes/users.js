@@ -113,12 +113,10 @@ router.get("/", auth, async (req, res) => {
 router.put("/update", async (req, res) => {
   const { id,pricing } = req.body;
   
-  console.log("id " + id)
   if (!id) {
     return res.status(400).json({ Msg: "Not all fields have been entered." });
 
   }
-
   User.findByIdAndUpdate(id, { pricing: pricing }).then(() => {
     User.findOne({ _id: id }).then((user) => {
       res.send(user);
@@ -126,12 +124,6 @@ router.put("/update", async (req, res) => {
     })
   })
     
-
-  
-  
-  
-  
-
 })
 
 module.exports = router;

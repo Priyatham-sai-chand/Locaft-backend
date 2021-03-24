@@ -213,13 +213,17 @@ export default function HomePage() {
       <ColoredSection>
 
         <ContainerPadded fluid>
+          <Row>
+            <FeatureCol lg="6">
 
           <BigHeading>Recommend us to your friends !</BigHeading>
           <img width="200px" src="google-play-badge.png"></img>
           &nbsp;
           <img width="160px" src="apple_badge.svg" ></img>
+          </FeatureCol>
+          </Row>
         </ContainerPadded>
-
+      
       </ColoredSection>
 
       <div id="footer">

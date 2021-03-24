@@ -2,6 +2,7 @@ const express = require("express");
 const config =  require("config");
 const mongoose = require("mongoose");
 const cors = require("cors");
+import { mongoURI } from './config/config';
 
 // set up express
 
@@ -16,7 +17,8 @@ app.listen(PORT, () => console.log(`The server has started on port: ${PORT}`));
 // set up mongoose
 
 mongoose.connect(
-  config.get('mongoURI'),
+  //config.get('mongoURI'),
+  mongoURI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

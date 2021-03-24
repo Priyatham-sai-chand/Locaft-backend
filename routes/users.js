@@ -5,7 +5,6 @@ const auth = require("../middleware/auth");
 const User = require("../schemas/User");
 const config = require("config");
 
-import { jwtSecret } from '../config/config';
 
 router.post("/register", async (req, res) => {
   try {
@@ -61,8 +60,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-    //const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
-    const token = jwt.sign({ id: user._id }, jwtSecret);
+    const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
     if(token) return res
     .json({
       token,

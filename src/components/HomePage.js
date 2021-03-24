@@ -50,7 +50,9 @@ const PressLogo = styled.img`
   height: 18%;
   margin: 20px 20px 50px;
 `;
-
+const RowFix = styled(Row)`
+  margin: 0 0px;
+`;
 
 const FeatureCol = styled(Col)`
   padding: 4.5%;
@@ -97,7 +99,7 @@ export default function HomePage() {
 
         <ContainerPadded fluid>
 
-          <Row>
+          <RowFix>
 
             <FeatureCol lg="6">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
@@ -115,14 +117,14 @@ export default function HomePage() {
               <Lottie options= { defaultOptions } />
             </FeatureCol>
 
-          </Row>
+          </RowFix>
         </ContainerPadded>
       </ColoredSection>
       <WhiteSection id="services">
 
         <ContainerPadded fluid>
 
-          <Row>
+          <RowFix>
             <FeatureCol lg="4">
               <IconStyler color="#66bfbf" width={50} height={50}><CheckCircle /></IconStyler>
               <br/>
@@ -143,7 +145,7 @@ export default function HomePage() {
               <FeatureTitle>Relax</FeatureTitle>
               <p>Sit back , we'll do the dirty work.</p>
             </FeatureCol>
-          </Row>
+          </RowFix>
 
 
         </ContainerPadded>
@@ -183,7 +185,7 @@ export default function HomePage() {
 
         <ContainerPadded fluid>
 
-          <Row>
+          <RowFix>
             <FeatureCol lg="4">
               <IconStyler color="#66bfbf" width={50} height={50}><AddressCard /></IconStyler>
               <br />
@@ -204,7 +206,7 @@ export default function HomePage() {
               <FeatureTitle>Mission</FeatureTitle>
               <p>Getting adapted and familiar to the new place made easy.</p>
             </FeatureCol>
-          </Row>
+          </RowFix>
         </ContainerPadded>
       </WhiteSection>
 
@@ -213,7 +215,7 @@ export default function HomePage() {
       <ColoredSection>
 
         <ContainerPadded fluid>
-          <Row>
+          <RowFix>
             <FeatureCol lg="4">
 
           <BigHeading>Recommend us to your friends !</BigHeading>
@@ -221,7 +223,7 @@ export default function HomePage() {
           &nbsp;
           <img width="160px" src="apple_badge.svg" ></img>
           </FeatureCol>
-          </Row>
+          </RowFix>
         </ContainerPadded>
       
       </ColoredSection>

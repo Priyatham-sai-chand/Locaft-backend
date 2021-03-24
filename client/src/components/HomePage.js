@@ -54,6 +54,8 @@ const PressLogo = styled.img`
 
 const FeatureCol = styled(Col)`
   padding: 4.5%;
+  width: 100vw;
+  height: 100vh;
 
 `;
 const ContainerPadded = styled(Container)`
@@ -112,7 +114,7 @@ export default function HomePage() {
 
             <FeatureCol lg="6">
               
-              <Lottie height={500} width={500} options= { defaultOptions } />
+              <Lottie options= { defaultOptions } />
             </FeatureCol>
 
           </Row>

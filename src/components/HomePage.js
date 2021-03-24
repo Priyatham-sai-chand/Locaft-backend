@@ -99,7 +99,7 @@ export default function HomePage() {
 
         <ContainerPadded fluid>
 
-          <RowFix>
+          <Row>
 
             <FeatureCol lg="6">
               <BigHeading>Adapt to a new place easy peasy.</BigHeading>
@@ -117,14 +117,14 @@ export default function HomePage() {
               <Lottie options= { defaultOptions } />
             </FeatureCol>
 
-          </RowFix>
+          </Row>
         </ContainerPadded>
       </ColoredSection>
       <WhiteSection id="services">
 
         <ContainerPadded fluid>
 
-          <RowFix>
+          <Row>
             <FeatureCol lg="4">
               <IconStyler color="#66bfbf" width={50} height={50}><CheckCircle /></IconStyler>
               <br/>
@@ -145,7 +145,7 @@ export default function HomePage() {
               <FeatureTitle>Relax</FeatureTitle>
               <p>Sit back , we'll do the dirty work.</p>
             </FeatureCol>
-          </RowFix>
+          </Row>
 
 
         </ContainerPadded>
@@ -185,7 +185,7 @@ export default function HomePage() {
 
         <ContainerPadded fluid>
 
-          <RowFix>
+          <Row>
             <FeatureCol lg="4">
               <IconStyler color="#66bfbf" width={50} height={50}><AddressCard /></IconStyler>
               <br />
@@ -206,7 +206,7 @@ export default function HomePage() {
               <FeatureTitle>Mission</FeatureTitle>
               <p>Getting adapted and familiar to the new place made easy.</p>
             </FeatureCol>
-          </RowFix>
+          </Row>
         </ContainerPadded>
       </WhiteSection>
 
@@ -215,15 +215,15 @@ export default function HomePage() {
       <ColoredSection>
 
         <ContainerPadded fluid>
-          <RowFix>
-            <FeatureCol lg="4">
+          <Row>
+            <FeatureCol lg="12">
 
           <BigHeading>Recommend us to your friends !</BigHeading>
           <img width="200px" src="google-play-badge.png"></img>
           &nbsp;
           <img width="160px" src="apple_badge.svg" ></img>
           </FeatureCol>
-          </RowFix>
+          </Row>
         </ContainerPadded>
       
       </ColoredSection>

@@ -3,6 +3,7 @@
 
 # dependencies
 client/node_modules
+<<<<<<< HEAD
 client/.pnp
 client/.env
 /client.pnp.js
@@ -30,3 +31,7 @@ server\node_modules
 client/node_modules
 server/node_modules
 >>>>>>> git ignore node modules
+=======
+server/node_modules
+node_modules
+>>>>>>> ignore server modules

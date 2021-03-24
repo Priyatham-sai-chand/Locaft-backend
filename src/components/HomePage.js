@@ -112,7 +112,7 @@ export default function HomePage() {
 
             <FeatureCol lg="6">
               
-              <Lottie height={500} width={500} options= { defaultOptions } />
+              <Lottie options= { defaultOptions } />
             </FeatureCol>
 
           </Row>

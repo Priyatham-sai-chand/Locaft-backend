@@ -4,7 +4,7 @@
   "description": "sign up and sign in auth",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "app": "cd .. && npm start"
   },
   "author": "B. Priyatham Sai chand",

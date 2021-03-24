@@ -209,11 +209,13 @@ const [ purchased, setPurchased ] = useState(false);
 const submit = async (props) => {
     props.preventDefault();
     try {
+        const id = userData.user.id;
         const pricingRes = await Axios.put(
             "http://localhost:5000/users/update", {
-                userData.user.email,
-                pricing
-            }
+            id,
+            pricing
+                
+        }
         
         );
     } catch (err) {
@@ -315,10 +317,12 @@ const submit = async (props) => {
                 </React.Fragment>
              ): (
                  <React.Fragment>
+                            <PricingPlanContainer styles = "{'flex-direction':'column'}">
                             <Heading>user name: {userData.user.username}</Heading>
-                <h1>Plan selected : {pricing}</h1>
+                <Heading>Plan selected : {pricing}</Heading>
 
                 <Button onClick={submit}>Confirm and Pay</Button>
+</PricingPlanContainer>
                 </React.Fragment>
              )
              }

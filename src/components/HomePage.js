@@ -218,7 +218,7 @@ export default function HomePage() {
           <Row>
             <FeatureCol lg="12">
 
-          <BigHeading>Recommend us to your friends !</BigHeading>
+          <BigHeading>check us out</BigHeading>
           <img width="200px" src="google-play-badge.png"></img>
           &nbsp;
           <img width="160px" src="apple_badge.svg" ></img>

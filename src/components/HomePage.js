@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { CheckCircle, Heart, AddressCard, ChartLine } from '@styled-icons/fa-solid';
 import { Bullseye } from "@styled-icons/fa-solid";
 import { StyledIconBase } from '@styled-icons/styled-icon'
+import Sidebar from './Sidebar';
 
 const IconStyler = styled.div`
   ${StyledIconBase} {
@@ -227,6 +228,7 @@ export default function HomePage() {
         </ContainerPadded>
       
       </ColoredSection>
+      <Sidebar />
 
       <div id="footer">
         <Footer />

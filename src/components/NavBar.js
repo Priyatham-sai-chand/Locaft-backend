@@ -39,6 +39,9 @@ const Header = styled.header`
   transition: 0.6s;
 
    }
+   @media (max-width: 768px) {
+     display:none;
+    }
 `;
 const List = styled.ul`
 

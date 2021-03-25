@@ -20,8 +20,8 @@ import ErrorNotice from "./ErrorNotice";
 
     try {
       const newUser = { username,email,phonenumber,password};
-      await Axios.post("http://localhost:5000/users/register", newUser);
-      const loginRes = await Axios.post("http://localhost:5000/users/login", {
+      await Axios.post("https://server-locaft.herokuapp.com/users/register", newUser);
+      const loginRes = await Axios.post("https://server-locaft.herokuapp.com/users/login", {
         email,
         password,
       });

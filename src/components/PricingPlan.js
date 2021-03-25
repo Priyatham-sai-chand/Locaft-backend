@@ -211,7 +211,7 @@ const submit = async (props) => {
     try {
         const id = userData.user.id;
         const pricingRes = await Axios.put(
-            "http://localhost:5000/users/update", {
+            "https://server-locaft.herokuapp.com/users/update", {
             id,
             pricing
                 

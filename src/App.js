@@ -24,13 +24,13 @@ export default function App() {
         token ="";
       }
       const tokenRes = await Axios.post(
-        "http://localhost:5000/users/tokenIsValid",
+        "https://server-locaft.herokuapp.com/users/tokenIsValid",
         null, 
         {headers: {"x-auth-token": token }}
         
         );
         if (tokenRes.data) {
-          const userRes = await Axios.get("http://localhost:5000/users/",
+          const userRes = await Axios.get("https://server-locaft.herokuapp.com/users/",
           {headers:{"x-auth-token":token},
           });
           setUserData({

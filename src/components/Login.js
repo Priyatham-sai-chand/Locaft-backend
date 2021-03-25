@@ -19,7 +19,7 @@ const Login = () => {
     try {
       const loginUser = { email, password };
       const loginRes = await Axios.post(
-        "https://server-locaft.heroku.app/users/login",
+        "https://server-locaft.herokuapp.com/users/login",
         loginUser
       );
       setUserData({

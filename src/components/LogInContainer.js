@@ -6,6 +6,22 @@ import Footer from './Footer';
 
 import '../login_reg.css';
 
+const BaseApp = styled.div`
+  display: flex;
+  color: white;
+  height:100vh;
+
+`;
+
+const Aside = styled.div`
+  width: 50%;
+  background-color: #66bfbf;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+`;
+
 const LogInContainer = (props) => {
     return (
         <BrowserRouter basename="user">

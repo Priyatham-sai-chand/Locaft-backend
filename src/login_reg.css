@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
 .Apper {
-  display: flex;
-  color: white;
-  height:100vh;
 }
 
 .Apper__Aside {
-  width: 50%;
-  background-color: #66bfbf;
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-end;
   
 
 }

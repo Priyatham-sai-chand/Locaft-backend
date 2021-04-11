@@ -1,7 +1,7 @@
 const express = require("express");
-const config =  require("config");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require('dotenv').config()
 
 // set up express
 
@@ -16,7 +16,7 @@ app.listen(PORT, () => console.log(`The server has started on port: ${PORT}`));
 // set up mongoose
 
 mongoose.connect(
-  config.get('mongoURI'),
+  process.env.mongoURI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,6 +24,7 @@ mongoose.connect(
   },
   (err) => {
     if (err) throw err;
+
     console.log("MongoDB connection established");
   }
 );

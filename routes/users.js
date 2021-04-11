@@ -10,7 +10,7 @@ router.post("/register", async (req, res) => {
   try {
     let { username,email,phonenumber,password} = req.body;
 
-    
+
 
     if (!email || !password )
       return res.status(400).json({ msg: "Not all fields have been entered." });
@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id },config.get('jwtSecret'));
+    const token = jwt.sign({ id: user._id },process.env.jwtSecret);
     if(token) return res
     .json({
       token,
@@ -89,7 +89,7 @@ router.post("/tokenIsValid", async (req, res) => {
     const token = req.header("x-auth-token");
     if (!token) return res.json({error: message});
 
-    const verified = jwt.verify(token, config.get("jwtSecret"));
+    const verified = jwt.verify(token,process.env.jwtSecret);
 
     if (!verified) return res.json({error: message});
 
@@ -112,7 +112,7 @@ router.get("/", auth, async (req, res) => {
 });
 router.put("/update", async (req, res) => {
   const { id,pricing } = req.body;
-  
+
   if (!id) {
     return res.status(400).json({ Msg: "Not all fields have been entered." });
 
@@ -123,7 +123,8 @@ router.put("/update", async (req, res) => {
       console.log(user)
     })
   })
-    
+
 })
+;
 
 module.exports = router;

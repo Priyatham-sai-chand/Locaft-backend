@@ -88,18 +88,20 @@ router.post("/tokenIsValid", async (req, res) => {
     const token = req.header("x-auth-token");
     console.log("isvalid : " + token);
 
-    if (!token) return res.json({error: message});
+    if (!token) return res.json({error_token: message});
+    console.log("\nistoken : " + token);
 
     const verified = jwt.verify(token,process.env.jwtSecret);
+    console.log("\nisverify : " + verified.id);
 
-    if (!verified) return res.json({error: message});
+    if (!verified) return res.json({error_verified: message});
 
     const user = await User.findById(verified.id);
-    if (!user) return res.json({error: message});
+    if (!user) return res.json({error_user: message});
 
     return res.json(true);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error_catch: err.message });
   }
 });
 
@@ -128,49 +130,48 @@ router.put("/update", async (req, res) => {
 })
 ;
 const client = new OAuth2Client(process.env.CLIENT_ID);
-router.post("/googlelogin", async (req,res) => {
+
+router.post("/googlelogin", async (req, res) => {
   const { idToken } = req.body;
-  console.log("token id " + idToken);
 
   client
     .verifyIdToken({ idToken, audience: process.env.CLIENT_ID })
-    .then(response => {
+    .then( async (response) =>   {
 
       const { email_verified, name, email } = response.payload;
+      console.log("payload name " + name + "\n");
       if (email_verified) {
-        User.findOne({ email:email }).exec((err, user) => {
-          if (user) {
-            const token = jwt.sign({ _id: user._id }, process.env.jwtSecret, );
+        const user =  await User.findOne({ email: email });
+        if (user) {
+          const token = jwt.sign({ id: user._id }, process.env.jwtSecret);
+          if (token) {
             return res.json({
               token,
               user: user
             });
+          }
           } else {
             let password = email + process.env.jwtSecret;
-            user = new User({ username:name, email:email, password:password });
-            user.save((err, data) => {
-              if (err) {
+            newUser = new User({ username:name, email:email, phonenumber:null, password:password, pricing: "free" });
+            const savedUser = await newUser.save();
+              if (!savedUser) {
                 console.log('ERROR GOOGLE LOGIN ON USER SAVE', err);
                 return res.status(400).json({
                   error: 'User signup failed with google'
                 });
               }
-              const token = jwt.sign(
-                { _id: data._id },
-                process.env.jwtSecret
-              );
+              const token = jwt.sign( { id: savedUser._id }, process.env.jwtSecret);
               if (token)
               return res.json({
                 token,
                 user: {
-                  id: data._id,
-                  username: data.username,
+                  id: savedUser._id,
+                  username: savedUser.username,
                   pricing: data.pricing
                 }
               });
-            });
           }
-        });
+
       } else {
         return res.status(400).json({
           error: 'Google login failed. Try again'

@@ -3,8 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 const User = require("../schemas/User");
-const config = require("config");
-
+const { OAuth2Client } = require('google-auth-library');
 
 router.post("/register", async (req, res) => {
   try {
@@ -87,6 +86,8 @@ router.delete("/delete", auth, async (req, res) => {
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
+    console.log("isvalid : " + token);
+
     if (!token) return res.json({error: message});
 
     const verified = jwt.verify(token,process.env.jwtSecret);
@@ -126,5 +127,56 @@ router.put("/update", async (req, res) => {
 
 })
 ;
+const client = new OAuth2Client(process.env.CLIENT_ID);
+router.post("/googlelogin", async (req,res) => {
+  const { idToken } = req.body;
+  console.log("token id " + idToken);
+
+  client
+    .verifyIdToken({ idToken, audience: process.env.CLIENT_ID })
+    .then(response => {
+
+      const { email_verified, name, email } = response.payload;
+      if (email_verified) {
+        User.findOne({ email:email }).exec((err, user) => {
+          if (user) {
+            const token = jwt.sign({ _id: user._id }, process.env.jwtSecret, );
+            return res.json({
+              token,
+              user: user
+            });
+          } else {
+            let password = email + process.env.jwtSecret;
+            user = new User({ username:name, email:email, password:password });
+            user.save((err, data) => {
+              if (err) {
+                console.log('ERROR GOOGLE LOGIN ON USER SAVE', err);
+                return res.status(400).json({
+                  error: 'User signup failed with google'
+                });
+              }
+              const token = jwt.sign(
+                { _id: data._id },
+                process.env.jwtSecret
+              );
+              if (token)
+              return res.json({
+                token,
+                user: {
+                  id: data._id,
+                  username: data.username,
+                  pricing: data.pricing
+                }
+              });
+            });
+          }
+        });
+      } else {
+        return res.status(400).json({
+          error: 'Google login failed. Try again'
+        });
+      }
+    });
+});
 
 module.exports = router;

@@ -144,6 +144,7 @@ router.post("/googlelogin", async (req, res) => {
         const user =  await User.findOne({ email: email });
         if (user) {
           const token = jwt.sign({ id: user._id }, process.env.jwtSecret);
+      console.log("payload name " + user.username + "\n");
           if (token) {
             return res.json({
               token,

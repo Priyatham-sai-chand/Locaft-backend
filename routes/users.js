@@ -107,10 +107,12 @@ router.post("/tokenIsValid", async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
   const user = await User.findById(req.user);
-  console.log(user);
   res.json({
     username: user.username,
     id: user._id,
+    pricing: user.pricing,
+    email: user.email,
+    phonenumber: user.phonenumber
   });
 });
 router.put("/update", async (req, res) => {

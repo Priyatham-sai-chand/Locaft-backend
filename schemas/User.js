@@ -26,7 +26,13 @@ const UserSchema = mongoose.Schema({
         enum: ['free','basic','intermediate','luxury'],
         default:'free',
         required:false
-    }
+    },
+    organization: {
+        type:String,
+        enum: ['mod','tenant','owner'],
+        default:'mod',
+        required:false
+	},
 
 });
 

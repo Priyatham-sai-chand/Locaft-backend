@@ -7,7 +7,7 @@ const { OAuth2Client } = require('google-auth-library');
 
 router.post("/register", async (req, res) => {
   try {
-    let { username,email,phonenumber,password} = req.body;
+    let { username,email,phonenumber,password,organization} = req.body;
 
 
 
@@ -34,6 +34,7 @@ router.post("/register", async (req, res) => {
       email,
       phonenumber,
       password: passwordHash,
+      organization
     });
     const savedUser = await newUser.save();
     res.json(savedUser);
@@ -112,7 +113,8 @@ router.get("/", auth, async (req, res) => {
     id: user._id,
     pricing: user.pricing,
     email: user.email,
-    phonenumber: user.phonenumber
+    phonenumber: user.phonenumber,
+    organization: user.organization
   });
 });
 router.put("/update", async (req, res) => {
